@@ -7,11 +7,11 @@ const books = require('../controllers/books');
 router.route('/users')
   .get(users.index)
   .post(users.create);
-// router.route('/users/:id')
-//   .get(users.show)
-//   .put(users.update)
-//   .patch(users.update)
-//   .delete(users.delete);
+router.route('/users/:id')
+  .get(users.show)
+  .put(users.update)
+  .patch(users.update)
+  .delete(users.delete);
 
 router.route('/books')
  .get(books.index)

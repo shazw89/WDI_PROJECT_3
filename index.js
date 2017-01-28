@@ -3,7 +3,7 @@ const mongoose   = require('mongoose');
 const morgan     = require('morgan');
 const bodyParser = require('body-parser');
 const cors       = require('cors');
-const expressJWT = require('express-jwt');
+// const expressJWT = require('express-jwt');
 const app        = express();
 const config     = require('./config/config');
 const routes     = require('./config/routes');
@@ -24,14 +24,14 @@ app.use(express.static(dest));
 //        { url: '/api/login', methods: 'POST'}
 //      ]
 //    }));
-app.use(jwtErrorHandler);
+// app.use(jwtErrorHandler);
 
-function jwtErrorHandler(err, res, req, next){
-  if (err.name !== 'UnauthorizedError') return next();
-  return res.status(401).json({ message: 'Unauthorized request' });
-}
+// function jwtErrorHandler(err, res, req, next){
+//   if (err.name !== 'UnauthorizedError') return next();
+//   return res.status(401).json({ message: 'Unauthorized request' });
+// }
 //
 app.use('/api', routes);
-// app.get('/*', (req, res) => res.sendFile(`${dest}/index.html`));
+app.get('/*', (req, res) => res.sendFile(`${dest}/index.html`));
 
 app.listen(config.port, () => console.log(`Express has started on port: ${config.port}`));
