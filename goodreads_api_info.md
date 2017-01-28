@@ -3,8 +3,9 @@
 ##Format of URL GET Request
 Note inclusion of API key in URL params
 ```
-https://www.goodreads.com/search.xml?key=HJ3E8sGfQg0TT8KMFDBng&q=Ender%27s+Game
+https://www.goodreads.com/search.xml?key=USER_API_KEY_GOES_HERE&q=Ender%27s+Game
 ```
+Add goodreads API key in place of `USER_API_KEY_GOES_HERE`
 ##Data Contents
 ####Useful Data
 - year of publication
