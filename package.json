@@ -1,0 +1,22 @@
+{
+  "name": "wdi_project-3",
+  "version": "1.0.0",
+  "description": "Project 3 for WDI",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EffingKay/WDI_PROJECT_3.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EffingKay/WDI_PROJECT_3/issues"
+  },
+  "homepage": "https://github.com/EffingKay/WDI_PROJECT_3#readme",
+  "dependencies": {
+    "express": "^4.14.0"
+  }
+}
