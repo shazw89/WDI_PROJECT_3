@@ -26,13 +26,13 @@ userSchema
 
 userSchema.methods.validatePassword = validatePassword;
 
-// userSchema.set('toJSON', {
-//   transform: function(doc, ret) {
-//     delete ret.passwordHash;
-//     delete ret.__v;
-//     return ret;
-//   }
-// });
+userSchema.set('toJSON', {
+  transform: function(doc, ret) {
+    delete ret.passwordHash;
+    delete ret.__v;
+    return ret;
+  }
+});
 
 module.exports = mongoose.model('User', userSchema);
 

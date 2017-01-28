@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-const users = require('../controllers/users'); // DOES NOT EXISTS YET
+const users = require('../controllers/users'); 
 const books = require('../controllers/books');
 
 router.route('/users')
