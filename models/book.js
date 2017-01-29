@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const bookSchema = mongoose.Schema({
   twcBookId: { type: String, trim: true },
-  addedByUser: { type: Array },
+  addedByUser: { type: String, trim: true },
   goodreadsId: { type: String, trim: true },
   isbn: { type: String, trim: true },
   title: { type: String, trim: true, required: true },
