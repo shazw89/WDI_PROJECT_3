@@ -2,8 +2,7 @@
 nav {
   background: #333;
   color: #fafafa;
-  max-height: 40px;
-  padding-top: 12px;
+  padding: 12px 0;
   .righ-side-navigation {
     float: right;
     margin: 0;
@@ -12,6 +11,30 @@ nav {
       list-style-type: none;
       display: inline-block;
       margin-right: .7em;
+      margin-bottom: 0;
+    }
+    p {
+      margin-bottom: 0;
     }
   }
+
 }
+
+.navbar {
+  min-width: 100vw;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: inline-block;
+  opacity: .7;
+  div {
+    text-align: center;
+    padding: 50px;
+    font-size: 2em;
+    color: white;
+  }
+}
+
+.foundBook { background-image: url('http://www.startupremarkable.com/wp-content/uploads/2015/02/a-book-a-week-image.jpg');}
+.browseBooks { background-image: url('http://urbanexpression.org.uk/wp-content/uploads/2015/11/bk-1.jpg'); }
+.reportBook { background-image: url('https://flavorwire.files.wordpress.com/2016/11/book-stock-image1.jpeg?w=1920');}
