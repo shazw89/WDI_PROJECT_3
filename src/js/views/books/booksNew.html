@@ -1,9 +1,20 @@
+
+
 <h2>Register a new book as a Wandering Chronicle</h2>
 <h3>Tell us all about it below</h3>
+
+
+
 <form ng-submit="books.search()">
-  <label for="book-detail">Enter a title, author, or ISBN</label>
-  <input id="book-detail" type="text" name="" value="" ng-model="books.newBook.searchTerm">
-  <button type="submit" name="button">Search</button>
+  <div class="row">
+    <div class="ten columns">
+      <label for="book-detail">Enter a title, author, or ISBN</label>
+      <input class="u-full-width" id="book-detail" type="text" name="" value="" ng-model="books.newBook.searchTerm">
+    </div>
+  </div>
+  <input type="submit" value="Search">
+
+
 </form>
 
 {{ books.newBook }}
