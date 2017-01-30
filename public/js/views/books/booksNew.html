@@ -17,10 +17,10 @@
   <section class="search-results">
     <ul >
       <li ng-repeat="book in books.bookResults.data.items track by $index">
-        <a href="#">
-          <p class="book-title">{{ book.volumeInfo.title }}</p>
-          <img src="{{ book.volumeInfo.imageLinks.thumbnail }}" alt="{{ book.volumeInfo.title }}">
-        </a>
+          <div ng-click="books.selectBook(book)">
+            <p class="book-title">{{ book.volumeInfo.title }}</p>
+            <img src="{{ book.volumeInfo.imageLinks.thumbnail }}" alt="{{ book.volumeInfo.title }}">
+          </div>
       </li>
     </ul>
   </section>
