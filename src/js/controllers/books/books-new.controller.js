@@ -8,7 +8,7 @@ function BooksNewCtrl(User, CurrentUserService, Book, $state){
   vm.newBook = {};
 
   vm.create = function() {
-    console.log(vm.newBook);
+    vm.newBook.addedByUser = CurrentUserService.currentUser._id;
     Book.save(vm.newBook);
   };
 
