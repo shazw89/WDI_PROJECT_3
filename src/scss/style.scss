@@ -1,1 +1,12 @@
 // Import all of your scss files here
+nav {
+  padding: 1em;
+  .righ-side-navigation {
+    float: right;
+    li {
+      list-style-type: none;
+      display: inline-block;
+      margin-right: .7em;
+    }
+  }
+}

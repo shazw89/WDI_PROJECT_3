@@ -18,14 +18,15 @@
     "angular": "^1.5.8",
     "angular-jwt": "^0.1.8",
     "angular-ui-router": "^0.3.2",
-    "bootstrap": "^3.3.7",
-    "angular-resource": "^1.5.9"
+
+    "angular-resource": "^1.5.9",
+    "skeleton": "^2.0.4"
   },
   "overrides": {
-    "bootstrap": {
+    "skeleton": {
       "main": [
-        "dist/css/bootstrap.css",
-        "dist/js/bootstrap.js"
+        "css/normalize.css",
+        "css/skeleton.css"
       ]
     }
   }
