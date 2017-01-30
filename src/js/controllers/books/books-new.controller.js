@@ -23,19 +23,4 @@ function BooksNewCtrl(User, CurrentUserService, Book, $state, $http){
         console.log(err);
       });
   };
-
-
-  // vm.register = () => {
-  //   Book
-  //   .register(vm.book)
-  //   .$promise
-  //   .then(data => {
-  //     CurrentUserService.getUser();
-  //     $state.go('booksCreate');
-  //
-  //   }, err => {
-  //     console.log(err);
-  //   });
-  //
-  // };
 }
