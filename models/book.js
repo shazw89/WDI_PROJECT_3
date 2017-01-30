@@ -17,10 +17,10 @@ const bookSchema = mongoose.Schema({
   timestamps: true
 });
 
-const droppedBookSchema = mongoose.Schema({
-  user: [{ type: mongoose.Schema.Types.ObjectId, ref: 'User' }],
-  book: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Book' }]
-});
+// const droppedBookSchema = mongoose.Schema({
+//   user: [{ type: mongoose.Schema.Types.ObjectId, ref: 'User' }],
+//   book: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Book' }]
+// });
 
 
 module.exports = mongoose.model('Book', bookSchema);
