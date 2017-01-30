@@ -18,9 +18,9 @@
     "angular": "^1.5.8",
     "angular-jwt": "^0.1.8",
     "angular-ui-router": "^0.3.2",
-
     "angular-resource": "^1.5.9",
-    "skeleton": "^2.0.4"
+    "skeleton": "^2.0.4",
+    "angular-slick": "^0.2.1"
   },
   "overrides": {
     "skeleton": {
@@ -29,5 +29,8 @@
         "css/skeleton.css"
       ]
     }
+  },
+  "resolutions": {
+    "angular": "~1.3.0"
   }
 }

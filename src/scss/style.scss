@@ -1,8 +1,13 @@
 // Import all of your scss files here
 nav {
-  padding: 1em;
+  background: #333;
+  color: #fafafa;
+  max-height: 40px;
+  padding-top: 12px;
   .righ-side-navigation {
     float: right;
+    margin: 0;
+    padding: 0;
     li {
       list-style-type: none;
       display: inline-block;
