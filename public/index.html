@@ -13,9 +13,8 @@
   </head>
   <body ng-controller="MainCtrl as main">
     <header>
-      <nav class="navbar navbar-default">
+      <!-- <nav class="navbar navbar-default">
         <div class="container">
-          <!-- Brand and toggle get grouped for better mobile display -->
           <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
               <span class="sr-only">Toggle navigation</span>
@@ -26,7 +25,6 @@
             <a class="navbar-brand" ui-sref="home">The Wandering Chronicle</a>
           </div>
 
-          <!-- Collect the nav links, forms, and other content for toggling -->
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
               <li ng-show="main.user">
@@ -48,8 +46,35 @@
                 <a ng-click="main.logout()">Logout</a>
               </li>
             </ul>
-          </div><!-- /.navbar-collapse -->
-        </div><!-- /.container-fluid -->
+          </div>
+        </div>
+      </nav> -->
+
+      <nav>
+        <div class="container">
+          <a href="/">The Wandering Chronicle</a>
+          <ul class="righ-side-navigation">
+            <li ng-show="main.user">
+              <p class="navbar-text">Welcome, {{ main.user.username }}</p>
+            </li>
+            <li ng-hide="main.user">
+              <a ui-sref="register">Register</a>
+            </li>
+            <li ng-hide="main.user">
+              <a ui-sref="login">Login</a>
+            </li>
+            <li ng-show="main.user">
+              <a ui-sref="booksNew">Register a Book</a>
+            </li>
+            <li ng-show="main.user">
+              <a ui-sref="usersIndex">Users</a>
+            </li>
+            <li ng-show="main.user">
+              <a ng-click="main.logout()">Logout</a>
+            </li>
+          </ul>
+
+        </div>
       </nav>
     </header>
     <main class="container" ui-view></main>
