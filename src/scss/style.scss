@@ -1,12 +1,24 @@
 // Import all of your scss files here
 nav {
-  padding: 1em;
+  background: #333;
+  color: #fafafa;
+  max-height: 40px;
+  padding-top: 12px;
   .righ-side-navigation {
     float: right;
+    margin: 0;
+    padding: 0;
     li {
       list-style-type: none;
       display: inline-block;
       margin-right: .7em;
     }
   }
+}
+
+.navbar {
+  min-width: 100vw;
+  min-height: 150px;
+  background-image: url('http://marketingland.com/wp-content/ml-loads/2014/08/books-library-legal-ss-1920.jpg');
+  display: inline-block;
 }
