@@ -5,5 +5,13 @@
   <input id="book-detail" type="text" name="" value="" ng-model="books.newBook.searchTerm">
   <button type="submit" name="button">Search</button>
 </form>
+<section class="search-results">
+  <ul >
+    <li ng-repeat="book in books.bookResults.data.items track by $index">
+      <p class="book-title">{{ book.volumeInfo.title }}</p>
+      <img src="{{  }}" alt="{{  }}">
+    </li>
+  </ul>
+</section>
 
 {{ books.newBook }}

@@ -16,7 +16,9 @@ function BooksNewCtrl(User, CurrentUserService, Book, $state, $http){
     $http
       .get(`https://www.googleapis.com/books/v1/volumes?q=${vm.newBook.searchTerm}&key=AIzaSyBGIar1-BqChkNiJtRCpfftuSdR5j8kHd4&fields=items`)
       .then(response => {
-        console.log(response);
+        vm.bookResults = response;
+        console.log('response :', vm.bookResults);
+        console.log(vm.bookResults.data.items);
       })
       .catch(err => {
         console.log(err);
