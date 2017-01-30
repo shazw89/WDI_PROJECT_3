@@ -7,9 +7,8 @@ function BooksNewCtrl(User, CurrentUserService, Book, $state, $http){
   const vm = this;
   vm.newBook = {};
 
-  vm.create = function() {
-    vm.newBook.addedByUser = CurrentUserService.currentUser._id;
-    Book.save(vm.newBook);
+  vm.selectBook = function(book) {
+    console.log(book);
   };
 
   vm.search = function() {
@@ -24,19 +23,4 @@ function BooksNewCtrl(User, CurrentUserService, Book, $state, $http){
         console.log(err);
       });
   };
-
-
-  // vm.register = () => {
-  //   Book
-  //   .register(vm.book)
-  //   .$promise
-  //   .then(data => {
-  //     CurrentUserService.getUser();
-  //     $state.go('booksCreate');
-  //
-  //   }, err => {
-  //     console.log(err);
-  //   });
-  //
-  // };
 }
