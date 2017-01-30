@@ -5,5 +5,5 @@ angular
 bookFactory.$inject = ['API', '$resource'];
 function bookFactory(API, $resource){
   return $resource(`${API}/books/:id`,
-    { id: '@_id'});
+    { id: '@_id' });
 }
