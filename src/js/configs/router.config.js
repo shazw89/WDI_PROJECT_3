@@ -29,6 +29,15 @@ function Router($stateProvider, $locationProvider, $urlRouterProvider){
     controller: 'UsersIndexCtrl',
     controllerAs: 'usersIndex'
   })
+  .state('BooksShow', {
+    url: '/books/:id/show',
+    templateUrl: '/js/views/books/booksShow.html',
+    params: {
+      id: null
+    },
+    controller: 'BooksShowCtrl',
+    controllerAs: 'BooksShow'
+  })
   .state('booksNew', {
     url: '/books/new',
     templateUrl: '/js/views/books/booksNew.html',
@@ -43,7 +52,7 @@ function Router($stateProvider, $locationProvider, $urlRouterProvider){
   })
   .state('BooksRegister', {
     url: '/books/:id/register',
-    templateUrl: '/js/views/books/BooksRegister.html',
+    templateUrl: '/js/views/books/booksRegister.html',
     params: {
       book: null,
       id: null
@@ -51,6 +60,5 @@ function Router($stateProvider, $locationProvider, $urlRouterProvider){
     controller: 'BooksRegisterCtrl',
     controllerAs: 'BooksRegister'
   });
-
   $urlRouterProvider.otherwise('/');
 }

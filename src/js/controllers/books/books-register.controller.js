@@ -2,8 +2,8 @@ angular
   .module('angularAuthentication')
   .controller('BooksRegisterCtrl', BooksRegisterCtrl);
 
-BooksRegisterCtrl.$inject = ['Book', '$stateParams', 'CurrentUserService' ];
-function BooksRegisterCtrl(Book, $stateParams, CurrentUserService){
+BooksRegisterCtrl.$inject = ['Book', '$stateParams', 'CurrentUserService', '$state'];
+function BooksRegisterCtrl(Book, $stateParams, CurrentUserService, $state){
   const vm = this;
   console.log('Show reached');
   console.log($stateParams);
@@ -21,7 +21,12 @@ function BooksRegisterCtrl(Book, $stateParams, CurrentUserService){
       user: user._id,
       entries: [vm.entry]
     };
-    Book.save(book);
+    Book.save(book).$promise
+    .then((res) => {
+      console.log(res, res._id);
+      $state.go('BooksShow', {id: res._id, book: res});
+    });
+
   }
 
 }

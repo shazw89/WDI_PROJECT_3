@@ -1,0 +1,17 @@
+<div class="container">
+  <img src="{{ BooksShow.book.image }}" alt="">
+
+  <h1>{{ BooksShow.book.title }}</h1>
+  <h4>{{ BooksShow.book.author }}</h4>
+
+  <p>{{ BooksShow.book.description }}</p>
+
+  <h4>The journey so far....</h4>
+  <p ng-repeat="entry in BooksShow.book.entries"> {{ entry }}</p> <!-- ng-repeat the comments here -->
+
+  <h4>Found the book? Tell us how!</h4>
+  <form ng-submit="BooksShow.addBook()">
+    <textarea class="u-full-width" placeholder="The story goes like this..." ng-model="BooksShow.entry"></textarea>
+    <input class="button" type="submit" value="Add story">
+  </form>
+</div>
