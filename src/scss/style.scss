@@ -17,7 +17,17 @@ nav {
       margin-bottom: 0;
     }
   }
+}
 
+img {
+  width: 120px;
+  height: auto;
+}
+
+ul {
+  margin: 0 auto;
+  padding: 0;
+  display: inline-block;
 }
 
 .navbar {
@@ -41,15 +51,17 @@ nav {
   background-image: url('http://marketingland.com/wp-content/ml-loads/2014/08/books-library-legal-ss-1920.jpg');
   display: inline-block;
 }
-.foundBook { background-image: url('http://www.startupremarkable.com/wp-content/uploads/2015/02/a-book-a-week-image.jpg');}
-.browseBooks { background-image: url('http://urbanexpression.org.uk/wp-content/uploads/2015/11/bk-1.jpg'); }
-.reportBook { background-image: url('https://flavorwire.files.wordpress.com/2016/11/book-stock-image1.jpeg?w=1920');}
 
-ul {
-  margin: 0 auto;
-  padding: 0;
-  display: inline-block;
+.foundBook {
+  background-image: url('http://www.startupremarkable.com/wp-content/uploads/2015/02/a-book-a-week-image.jpg');
+}
 
+.browseBooks {
+  background-image: url('http://urbanexpression.org.uk/wp-content/uploads/2015/11/bk-1.jpg');
+}
+
+.reportBook {
+  background-image: url('https://flavorwire.files.wordpress.com/2016/11/book-stock-image1.jpeg?w=1920')
 }
 
 .books-list {
@@ -58,11 +70,6 @@ ul {
   padding: 0;
   list-style-type: none;
   width: 200px;
-}
-
-img {
-  width: 120px;
-  height: auto;
 }
 
 .main-container {
@@ -74,4 +81,41 @@ img {
 .book-index {
   // max-width: 1000px;
   // margin: 0 auto;
+}
+
+.user-details {
+  float: left;
+  width: 35%;
+}
+
+.users-books {
+  float: right;
+  width: 65%;
+}
+
+.users-book-list {
+  list-style: none;
+  padding: 1em 0;
+  width: 100%;
+}
+
+.user-book-tile {
+  display: table;
+  // padding: 2em 0;
+  width: 100%;
+}
+
+.user-book-image {
+  // border: 1px solid red;
+  clear: left;
+  float: left;
+  padding-top: 1.5em;
+  width: 25%;
+}
+
+.user-book-content {
+  // border: 1px solid blue;
+  clear: right;
+  float: right;
+  width: 70%;
 }
