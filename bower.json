@@ -20,7 +20,8 @@
     "angular-ui-router": "^0.3.2",
     "angular-resource": "^1.5.9",
     "skeleton": "^2.0.4",
-    "angular-slick": "^0.2.1"
+    "angular-slick": "^0.2.1",
+    "angular-bootstrap": "^2.5.0"
   },
   "overrides": {
     "skeleton": {
