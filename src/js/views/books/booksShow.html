@@ -1,0 +1,17 @@
+<div class="container">
+  <img src="{{ booksShow.book.volumeInfo.imageLinks.thumbnail }}" alt="">
+
+  <h1>{{ booksShow.book.volumeInfo.title }}</h1>
+  <h4>{{ booksShow.book.volumeInfo.authors[0] }}</h4>
+
+  <p>{{ booksShow.book.volumeInfo.description }}</p>
+
+  <h4>Tell us a story about the book</h4>
+  <form>
+    <textarea class="u-full-width" placeholder="The story goes like this..."></textarea>
+    <input class="button" type="submit" value="Add the book">
+  </form>
+
+  <h4>The journey so far....</h4>
+  <p>{{ book.comment }}</p> <!-- ng-repeat the comments here -->
+</div>
