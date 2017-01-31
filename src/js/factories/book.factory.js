@@ -4,6 +4,6 @@ angular
 
 bookFactory.$inject = ['API', '$resource'];
 function bookFactory(API, $resource){
-  return $resource(`${API}/books/:id`,
-    { id: '@_id' });
+  return $resource(`${API}/books/:shortId`,
+    { shortId: '@shortId' });
 }

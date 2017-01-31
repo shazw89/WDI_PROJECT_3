@@ -25,7 +25,9 @@ function booksCreate(req, res) {
 
 function BooksRegister(req, res){
   Book
-  .findById(req.params.id, (err, book) => {
+  .findOne({
+    shortId: req.params.shortId
+  }, (err, book) => {
     if (err) return res.status(500).json({ message: 'Something went wrong.' });
     if(!book) return res.status(404).json({ message: 'Book not found' });
     return res.status(200).json(book);
@@ -34,7 +36,9 @@ function BooksRegister(req, res){
 
 function booksUpdate(req, res){
   Book
-  .findByIdAndUpdate(req.params.id, req.body, { new: true }, (err, book) => {
+  .findOneAndUpdate({
+    shortId: req.params.shortId
+  }, req.body, { new: true }, (err, book) => {
     if (err) return res.status(500).json({ message: 'Something went wrong.' });
     if (!book) return res.status(404).json({ message: 'Book not found' });
     return res.status(200).json(book);
@@ -42,7 +46,9 @@ function booksUpdate(req, res){
 }
 
 function booksDelete(req, res){
-  Book.findByIdAndRemove(req.params.id, err => {
+  Book.findOneAndRemove({
+    shortId: req.params.shortId
+  }, err => {
     if (err) return res.status(500).json({ message: 'Something went wrong.' });
     return res.sendStatus(204);
   });

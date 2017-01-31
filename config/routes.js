@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-const users = require('../controllers/users'); 
+const users = require('../controllers/users');
 const authentications = require('../controllers/authentications');
 const books = require('../controllers/books');
 
@@ -23,7 +23,7 @@ router.route('/users/:id')
 router.route('/books')
  .get(books.index)
  .post(books.create);
-router.route('/books/:id')
+router.route('/books/:shortId')
  .get(books.show)
  .patch(books.update)
  .put(books.update)

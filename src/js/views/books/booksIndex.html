@@ -14,10 +14,11 @@
     <span>{{ item.label }}</span>
   </div>
 </slick> -->
+
 <div class="book-index">
   <ul>
-  <li ng-repeat="book in booksIndex.books" class="books-list">
-  <img ng-src="{{ book.image }}" alt="{{ book.title }}">
-  </li>
+    <li ng-repeat="book in booksIndex.books" class="books-list">
+      <a ui-sref="booksShow({ shortId: book.shortId })"><img ng-src="{{ book.image }}" alt="{{ book.title }}"></a>
+    </li>
   </ul>
 </div>

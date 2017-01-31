@@ -16,7 +16,7 @@
         <a href="/">The Wandering Chronicle</a>
         <ul class="righ-side-navigation">
           <li ng-show="main.user">
-            <p class="navbar-text">Welcome, {{ main.user.username }}</p>
+            <a ui-sref="usersShow({ id: main.user._id })">{{ main.user.username }}</a>
           </li>
           <li ng-hide="main.user">
             <a ui-sref="register">Register</a>
@@ -25,10 +25,16 @@
             <a ui-sref="login">Login</a>
           </li>
           <li ng-show="main.user">
-            <a ui-sref="booksNew">Register a Book</a>
+            <a ui-sref="">I Found a Book</a>
           </li>
           <li ng-show="main.user">
-            <a ui-sref="usersIndex">Users</a>
+            <a ui-sref="booksNew">List a Book</a>
+          </li>
+          <li ng-show="main.user">
+            <a ui-sref="usersIndex">Users (Dev)</a>
+          </li>
+          <li ng-show="main.user">
+            <a ui-sref="booksIndex">Books</a>
           </li>
           <li ng-show="main.user">
             <a ng-click="main.logout()">Logout</a>

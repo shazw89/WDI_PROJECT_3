@@ -7,7 +7,7 @@ function BooksShowCtrl($stateParams, Book){
   const vm = this;
 
   Book
-    .get({ id: $stateParams.id}).$promise
+    .get({ shortId: $stateParams.shortId }).$promise
     .then((response) => {
       vm.book = response;
       console.log(vm.book);

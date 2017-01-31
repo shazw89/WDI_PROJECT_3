@@ -5,8 +5,8 @@ angular
 BooksRegisterCtrl.$inject = ['Book', '$stateParams', 'CurrentUserService', '$state'];
 function BooksRegisterCtrl(Book, $stateParams, CurrentUserService, $state){
   const vm = this;
-  console.log('Show reached');
-  console.log($stateParams);
+
+  // The book that you received from the API
   vm.book = $stateParams.book;
   vm.addBook = addBook;
 
@@ -19,14 +19,11 @@ function BooksRegisterCtrl(Book, $stateParams, CurrentUserService, $state){
       description: vm.book.volumeInfo.description,
       googleId: $stateParams.id,
       user: user._id,
-      entries: [vm.entry]
+      // entries: [vm.entry]
     };
     Book.save(book).$promise
-    .then((res) => {
-      console.log(res, res._id);
-      $state.go('BooksShow', {id: res._id, book: res});
+    .then(res => {
+      $state.go('booksShow', { shortId: res.shortId });
     });
-
   }
-
 }
