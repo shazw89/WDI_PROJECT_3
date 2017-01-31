@@ -2,10 +2,16 @@
   <h2>Profile: {{ usersShow.user.username }}</h2>
   <p>Email Address: <a href="mailto:{{ usersShow.user.email }}">{{ usersShow.user.email }}</a></p>
 </section>
-{{ usersShow.user.books[0] }}
 <section class="users-books">
   <h2>Where are my books now?</h2>
   <ul>
-    <li>{{ usersShow.user.books.title }}</li>
+    <li ng-repeat="entry in usersShow.user.books" class="single-book">
+      <img src="{{ entry.image }}" alt="{{ entry.title }}">
+      <p>{{ entry.title }}, by {{ entry.author }}</p>
+      <p>Short ID: {{ entry.shortId }}</p>
+      <ul>
+        <li ng-repeat="comment in usersShow.user.books.entries">{{ comment }}</li>
+      </ul>
+    </li>
   </ul>
 </section>

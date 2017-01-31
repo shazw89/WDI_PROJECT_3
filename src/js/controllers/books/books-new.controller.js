@@ -25,7 +25,7 @@ function BooksNewCtrl(User, CurrentUserService, Book, $state, $http){
 
   function chooseBook($item, $model, $label){
     vm.book = $item;
-    console.log(vm.book);
+    // console.log(vm.book);
   }
 
   function searchGoogle(val) {

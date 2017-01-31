@@ -10,6 +10,6 @@ function BooksShowCtrl($stateParams, Book){
     .get({ shortId: $stateParams.shortId }).$promise
     .then((response) => {
       vm.book = response;
-      console.log(vm.book);
+      // console.log(vm.book);
     });
 }
