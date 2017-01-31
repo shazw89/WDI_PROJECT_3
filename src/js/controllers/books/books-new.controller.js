@@ -8,7 +8,7 @@ function BooksNewCtrl(User, CurrentUserService, Book, $state, $http){
   vm.newBook = {};
 
   vm.selectBook = function(book) {
-    $state.go('booksShow', {book: book, id: book.id});
+    $state.go('BooksRegister', {book: book, id: book.id});
   };
 
   vm.search = function() {

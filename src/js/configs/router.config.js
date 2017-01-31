@@ -41,15 +41,15 @@ function Router($stateProvider, $locationProvider, $urlRouterProvider){
     controller: 'BooksIndexCtrl',
     controllerAs: 'booksIndex'
   })
-  .state('booksShow', {
-    url: '/books/:id/show',
-    templateUrl: '/js/views/books/booksShow.html',
+  .state('BooksRegister', {
+    url: '/books/:id/register',
+    templateUrl: '/js/views/books/BooksRegister.html',
     params: {
       book: null,
       id: null
     },
-    controller: 'BooksShowCtrl',
-    controllerAs: 'booksShow'
+    controller: 'BooksRegisterCtrl',
+    controllerAs: 'BooksRegister'
   });
 
   $urlRouterProvider.otherwise('/');
