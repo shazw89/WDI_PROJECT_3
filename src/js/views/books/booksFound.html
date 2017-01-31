@@ -1,5 +1,6 @@
 <div class="container">
   <h1>I found a book!</h1>
+  <h4>{{ booksFound.message }}</h4>
   <form ng-submit="booksFound.findBook()">
     <label for="codeInput">Enter the unique code</label>
     <input type="text" class="u-full-width" placeholder="Code" id="codeInput" ng-model="booksFound.shortId" />

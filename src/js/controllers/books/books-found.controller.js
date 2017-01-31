@@ -2,13 +2,19 @@ angular
   .module('angularAuthentication')
   .controller('BooksFoundCtrl', BooksFoundCtrl);
 
-BooksFoundCtrl.$inject = ['$state'];
-function BooksFoundCtrl($state) {
+BooksFoundCtrl.$inject = ['$state', 'Book'];
+function BooksFoundCtrl($state, Book) {
   const vm = this;
+  vm.message = null;
   vm.findBook = findBook;
   function findBook() {
-    
-    $state.go('booksShow', { shortId: vm.shortId });
+    Book
+      .get({ shortId: vm.shortId }).$promise
+      .then(() => {
+        $state.go('booksShow', { shortId: vm.shortId});
+      }).catch( () => {
+        vm.message = 'Sorry. Try again.';
+      });
   }
 
 }
