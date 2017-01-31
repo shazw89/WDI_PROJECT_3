@@ -13,8 +13,8 @@
 
   <h4>The journey so far....</h4>
   <p ng-repeat="entry in BooksShow.book.entries">
-    <cite>{{ entry.message }}</cite>
-    <em>{{ entry.name }}</em>
-    {{ entry }}
+    <strong>{{ entry.name}} </strong> at {{ entry.location}}<br>
+    <span>{{ entry.message }} </span>
+    <!-- {{ entry }} -->
   </p>
 </div>
