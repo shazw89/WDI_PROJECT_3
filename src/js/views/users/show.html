@@ -1,2 +1,11 @@
-<h2>Profile: {{ usersShow.user.username }}</h2>
-<p>Email Address: <a href="mailto:{{ usersShow.user.email }}">{{ usersShow.user.email }}</a></p>
+<section class="user-details">
+  <h2>Profile: {{ usersShow.user.username }}</h2>
+  <p>Email Address: <a href="mailto:{{ usersShow.user.email }}">{{ usersShow.user.email }}</a></p>
+</section>
+{{ usersShow.user.books[0] }}
+<section class="users-books">
+  <h2>Where are my books now?</h2>
+  <ul>
+    <li>{{ usersShow.user.books.title }}</li>
+  </ul>
+</section>
