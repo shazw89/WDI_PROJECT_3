@@ -44,3 +44,34 @@ nav {
 .foundBook { background-image: url('http://www.startupremarkable.com/wp-content/uploads/2015/02/a-book-a-week-image.jpg');}
 .browseBooks { background-image: url('http://urbanexpression.org.uk/wp-content/uploads/2015/11/bk-1.jpg'); }
 .reportBook { background-image: url('https://flavorwire.files.wordpress.com/2016/11/book-stock-image1.jpeg?w=1920');}
+
+ul {
+  margin: 0 auto;
+  padding: 0;
+  display: inline-block;
+
+}
+
+.books-list {
+  float: left;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  width: 200px;
+}
+
+img {
+  width: 120px;
+  height: auto;
+}
+
+.main-container {
+  // border: 1px solid red;
+  margin: 0 auto;
+  max-width: 1140px;
+}
+
+.book-index {
+  // max-width: 1000px;
+  // margin: 0 auto;
+}
