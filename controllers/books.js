@@ -1,7 +1,7 @@
 module.exports = {
   index: booksIndex,
   create: booksCreate,
-  show: booksShow,
+  show: BooksRegister,
   update: booksUpdate,
   delete: booksDelete
 };
@@ -23,7 +23,7 @@ function booksCreate(req, res) {
   });
 }
 
-function booksShow(req, res){
+function BooksRegister(req, res){
   Book
   .findById(req.params.id, (err, book) => {
     if (err) return res.status(500).json({ message: 'Something went wrong.' });

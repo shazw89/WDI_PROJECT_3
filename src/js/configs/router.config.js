@@ -40,6 +40,16 @@ function Router($stateProvider, $locationProvider, $urlRouterProvider){
     templateUrl: '/js/views/books/booksIndex.html',
     controller: 'BooksIndexCtrl',
     controllerAs: 'booksIndex'
+  })
+  .state('BooksRegister', {
+    url: '/books/:id/register',
+    templateUrl: '/js/views/books/BooksRegister.html',
+    params: {
+      book: null,
+      id: null
+    },
+    controller: 'BooksRegisterCtrl',
+    controllerAs: 'BooksRegister'
   });
 
   $urlRouterProvider.otherwise('/');

@@ -5,7 +5,9 @@ const bookSchema = mongoose.Schema({
   author: { type: String, trim: true },
   image: { type: String, trim: true },
   description: { type: String, trim: true },
-  googleId: { type: String }
+  googleId: { type: String },
+  user: { type: String },
+  entries: { type: Array }
   // twcBookId: { type: String, trim: true },
   // addedByUser: { type: String, trim: true },
   // goodreadsId: { type: String, trim: true },
