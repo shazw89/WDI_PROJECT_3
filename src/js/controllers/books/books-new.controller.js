@@ -10,6 +10,7 @@ function BooksNewCtrl(User, CurrentUserService, Book, $state, $http){
   vm.selectBook       = selectBook;
   vm.addBook          = addBook;
   vm.showBook         = false;
+  vm.bookChosen       = false;
 
   function addBook() {
     Book
@@ -20,10 +21,11 @@ function BooksNewCtrl(User, CurrentUserService, Book, $state, $http){
   }
 
   function selectBook() {
-    vm.showBook = true;
+    if (vm.bookChosen) vm.showBook = true;
   }
 
   function chooseBook($item, $model, $label){
+    vm.bookChosen = true;
     vm.book = $item;
     console.log(vm.book);
   }
@@ -38,8 +40,8 @@ function BooksNewCtrl(User, CurrentUserService, Book, $state, $http){
           image: item.volumeInfo.imageLinks.thumbnail,
           description: item.volumeInfo.description,
           googleId: item.id,
-          user: CurrentUserService.currentUser._id
-          // entries: []
+          user: CurrentUserService.currentUser._id,
+          entries: []
         };
       });
     });
