@@ -1,7 +1,6 @@
 <div class="container">
 
-  <h2>Register a new book as a Wandering Chronicle</h2>
-  <h3>Tell us all about it below</h3>
+  <h2>Drop a book</h2>
 
   <form ng-submit="books.selectBook()" ng-hide="books.showBook">
     <div class="row">
@@ -19,7 +18,7 @@
     autocomplete="off">
       </div>
     </div>
-    <input type="submit" value="Select">
+    <input type="submit" value="Select" ng-show="books.bookChosen">
   </form>
   <div ng-show="books.showBook">
     <img src="{{ books.book.image }}" alt="{{ books.book.title }}">
@@ -30,28 +29,10 @@
 
     <h4>Found the book? Tell us how!</h4>
     <form ng-submit="books.addBook()">
-      <textarea class="u-full-width" placeholder="The story goes like this..." ng-model="BooksShow.entry"></textarea>
+      <input type="text"
+      <textarea class="u-full-width" placeholder="The story goes like this..." ng-model="books.book.entries[0].name"></textarea>
       <input class="button" type="submit" value="Add story">
     </form>
 
-    <!-- <h4>The journey so far....</h4>
-    <p ng-repeat="entry in BooksShow.book.entries">
-      <cite>{{ entry.message }}</cite>
-      <em>{{ entry.name }}</em>
-      {{ entry }}
-    </p> -->
-
   </div>
 </div>
-
-<!-- <input class="u-full-width" id="book-detail" type="text" name="" value="" ng-model="books.newBook.searchTerm"> -->
-<!-- <section class="search-results">
-  <ul >
-    <li ng-repeat="book in books.bookResults.data.items track by $index">
-        <div ng-click="books.selectBook(book)">
-          <p class="book-title">{{ book.volumeInfo.title }}</p>
-          <img src="{{ book.volumeInfo.imageLinks.thumbnail }}" alt="{{ book.volumeInfo.title }}">
-        </div>
-    </li>
-  </ul>
-</section> -->
