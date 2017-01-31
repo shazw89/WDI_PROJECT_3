@@ -3,5 +3,5 @@ angular
     'ui.router',
     'ngResource',
     'angular-jwt',
-    'slick'
+    'ui.bootstrap'
   ]);
