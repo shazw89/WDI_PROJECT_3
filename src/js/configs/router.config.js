@@ -62,6 +62,12 @@ function Router($stateProvider, $locationProvider, $urlRouterProvider){
     },
     controller: 'BooksRegisterCtrl',
     controllerAs: 'BooksRegister'
+  })
+  .state('booksFound', {
+    url: '/found',
+    templateUrl: '/js/views/books/booksFound.html',
+    controller: 'BooksFoundCtrl',
+    controllerAs: 'booksFound'
   });
   $urlRouterProvider.otherwise('/');
 }
