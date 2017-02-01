@@ -18,18 +18,7 @@
       <div class="bar"></div>
         <ul>
           <li class="menu-link" ng-show="main.user">
-
-            <a ng-click="main.hideMenu()" ui-sref="usersShow({ id: main.user._id })">My profile</a>
-
-      <div class="container">
-        <a href="/">The Wandering Chronicle</a>
-        <ul class="righ-side-navigation">
-          <li ng-show="main.user" class="nav-li">
-            <a ui-sref="usersShow({ id: main.user._id })">{{ main.user.username }}</a>
-
-
             <a ng-click="main.hideMenu()" ui-sref="usersShow({ id: main.user._id })">PROFILE</a>
-
           </li>
           <li class="menu-link" ng-hide="main.user">
             <a ui-sref="register">JOIN THE MOVEMENT</a>
@@ -60,7 +49,6 @@
 
   <main ui-view class="main-container container"></main>
 </body>
-
 </html>
 
 <!-- small change for commit -->
