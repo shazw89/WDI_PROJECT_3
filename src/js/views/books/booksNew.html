@@ -34,15 +34,15 @@
       <div class="row">
         <div class="six columns">
           <label for="usernameInput">Name</label>
-          <input class="u-full-width" type="text" placeholder="Name" id="usernameInput" ng-model="books.entry.name">
+          <input class="u-full-width" type="text" placeholder="Name" id="usernameInput" ng-model="books.name">
         </div>
         <div class="six columns">
-          <label for="locationInput">Location*</label>
-          <input class="u-full-width" type="text" placeholder="Location" id="locationInput" ng-model="books.entry.location" required>
+          <label for="locationInput">Location (area/address/postcode)</label>
+          <input class="u-full-width" type="text" placeholder="Location" id="locationInput" ng-model="books.location" required>
         </div>
       </div>
       <label for="messageInput">Message*</label>
-      <textarea class="u-full-width" placeholder="The story goes like this..." id="messageInput" ng-model="books.entry.message" required></textarea>
+      <textarea class="u-full-width" placeholder="The story goes like this..." id="messageInput" ng-model="books.message" required></textarea>
       <input class="button" type="submit" value="Add story">
     </form>
   </div>

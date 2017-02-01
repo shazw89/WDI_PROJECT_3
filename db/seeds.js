@@ -17,7 +17,8 @@ async.waterfall([
       username: 'henry',
       email: 'henry@henry.com',
       password: 'password',
-      passwordConfirmation: 'password'
+      passwordConfirmation: 'password',
+      img: 'https://www.fillmurray.com/g/200/300'
     }, (err, user) => {
       if (err) return done(err);
       console.log(`${user.username} was created`);
@@ -63,28 +64,32 @@ async.waterfall([
       message: 'Made my day!',
       location: 'Aldgate East Station',
       lat: 51.515461,
-      lng: -0.072299
+      lng: -0.072299,
+      date: Date.now()
     },
     {
       name: 'Klaudia',
       message: 'I never thought this would happen to me',
       location: 'Somewhere near Aldgate East Station',
       lat: 51.5158,
-      lng: -0.073
+      lng: -0.073,
+      date: Date.now()
     },
     {
       name: 'Sharon',
       message: 'I wonder if James is the guy I know?',
       location: 'A few lat lngz away from somewhere',
       lat: 51.51566,
-      lng: -0.076211
+      lng: -0.076211,
+      date: Date.now()
     },
     {
       name: 'Chris',
       message: 'Why are there no pages in this book?',
       location: 'Near my house',
       lat: 51.515444,
-      lng: -0.077000
+      lng: -0.077000,
+      date: Date.now()
     }]}}}, { upsert: true, new: true }, (err, book) => {
       if (err) return done(err);
       console.log(`${book.entries.length} were saved.`);
