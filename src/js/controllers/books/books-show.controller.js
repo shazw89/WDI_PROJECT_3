@@ -2,7 +2,7 @@ angular
   .module('angularAuthentication')
   .controller('BooksShowCtrl', BooksShowCtrl);
 
-BooksShowCtrl.$inject = ['$stateParams', 'Book'];
+BooksShowCtrl.$inject = ['$stateParams', 'Book', '$state'];
 function BooksShowCtrl($stateParams, Book){
   const vm = this;
 
@@ -12,4 +12,13 @@ function BooksShowCtrl($stateParams, Book){
       vm.book = response;
       // console.log(vm.book);
     });
+
+  vm.updateEntries = updateEntries;
+
+  function updateEntries() {
+    vm.book.entries.push(vm.entry);
+    Book.update({shortId: $stateParams.shortId}, vm.book);
+    vm.entry = {};
+  }
+
 }
