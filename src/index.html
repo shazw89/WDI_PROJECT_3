@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <title>The Wandering Chronicle</title>
   <base href="/" />
+  <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
   <!-- inject:js -->
   <!-- endinject -->
   <!-- inject:css -->
@@ -17,6 +18,7 @@
       <div class="bar"></div>
         <ul>
           <li class="menu-link" ng-show="main.user">
+
             <a ng-click="main.hideMenu()" ui-sref="usersShow({ id: main.user._id })">My profile</a>
 
       <div class="container">
@@ -25,27 +27,30 @@
           <li ng-show="main.user" class="nav-li">
             <a ui-sref="usersShow({ id: main.user._id })">{{ main.user.username }}</a>
 
+
+            <a ng-click="main.hideMenu()" ui-sref="usersShow({ id: main.user._id })">PROFILE</a>
+
           </li>
           <li class="menu-link" ng-hide="main.user">
-            <a ui-sref="register">SIGN UP</a>
+            <a ui-sref="register">JOIN THE MOVEMENT</a>
           </li>
           <li class="menu-link" ng-hide="main.user">
-            <a ui-sref="login">Sign in</a>
+            <a ui-sref="login">SIGN IN</a>
           </li>
           <li class="menu-link" ng-show="main.user">
-            <a ui-sref="booksFound">I Found a Book</a>
+            <a ui-sref="booksFound">I FOUND A BOOK</a>
           </li>
           <li class="menu-link" ng-show="main.user">
-            <a ui-sref="booksNew">List a Book</a>
+            <a ui-sref="booksNew">LIST A NEW BOOK</a>
           </li>
           <li class="menu-link" ng-show="main.user">
             <a ui-sref="usersIndex">Users (Dev)</a>
           </li>
           <li class="menu-link" ng-show="main.user">
-            <a ui-sref="booksIndex">Books</a>
+            <a ui-sref="booksIndex">BOOKS</a>
           </li>
           <li class="menu-link" ng-show="main.user">
-            <a ng-click="main.logout()">Logout</a>
+            <a ng-click="main.logout()">Logout (dev)</a>
           </li>
         </ul>
     </div>
