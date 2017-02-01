@@ -15,7 +15,7 @@
       <div class="container">
         <a href="/">The Wandering Chronicle</a>
         <ul class="righ-side-navigation">
-          <li ng-show="main.user">
+          <li ng-show="main.user" class="nav-li">
             <a ui-sref="usersShow({ id: main.user._id })">{{ main.user.username }}</a>
           </li>
           <li ng-hide="main.user">
@@ -46,6 +46,7 @@
 
   <main ui-view class="main-container"></main>
 </body>
+
 </html>
 
 <!-- small change for commit -->

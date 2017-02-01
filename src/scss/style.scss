@@ -1,6 +1,6 @@
 // Import all of your scss files here
 nav {
-  background: #333;
+  background: #D45454;
   color: #fafafa;
   padding: 12px 0;
   .righ-side-navigation {
@@ -12,6 +12,11 @@ nav {
       display: inline-block;
       margin-right: .7em;
       margin-bottom: 0;
+
+    }
+    a {
+      text-decoration: none;
+      color: #FEC0C0;
     }
     p {
       margin-bottom: 0;
@@ -43,13 +48,19 @@ ul {
     font-size: 2em;
     color: white;
   }
+
+
+
 }
+
+
 
 .navbar {
   min-width: 100vw;
   min-height: 150px;
   background-image: url('http://marketingland.com/wp-content/ml-loads/2014/08/books-library-legal-ss-1920.jpg');
   display: inline-block;
+
 }
 
 .foundBook {
@@ -76,6 +87,7 @@ ul {
   // border: 1px solid red;
   margin: 0 auto;
   max-width: 1140px;
+  background-color: #D45454;
 }
 
 .book-index {
@@ -118,4 +130,21 @@ ul {
   clear: right;
   float: right;
   width: 70%;
+}
+
+.main {
+  background-color: #AA0000;
+}
+
+.ng-scope {
+  background-color: #D45454;
+  // margin: 10px;
+}
+
+.container {
+  a {
+    text-decoration: none;
+    color: #FEC0C0;
+    font-size: 16px;
+  }
 }
