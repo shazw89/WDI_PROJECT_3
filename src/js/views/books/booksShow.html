@@ -15,17 +15,17 @@
         </div>
         <div class="six columns">
           <label for="locationInput">Location*</label>
-          <input class="u-full-width" type="text" placeholder="Location" id="locationInput" ng-model="BooksShow.entry.location">
+          <input class="u-full-width" type="text" placeholder="Location" id="locationInput" ng-model="BooksShow.entry.location" required>
         </div>
       </div>
-      <label for="messageInput" ng-model="BooksShow.book.newEntry.location">Message*</label>
-      <textarea class="u-full-width" placeholder="The story goes like this..." id="messageInput" ng-model="BooksShow.entry.message"></textarea>
+      <label for="messageInput" ng-model="BooksShow.book.newEntry.message">Message*</label>
+      <textarea class="u-full-width" placeholder="The story goes like this..." id="messageInput" ng-model="BooksShow.entry.message" required></textarea>
       <input class="button" type="submit" value="Add story">
     </form>
-  </div>
-    <h4>The journey so far....</h4>
-    <p ng-repeat="entry in BooksShow.book.entries">
-      <strong>{{ entry.name }} </strong> at {{ entry.location }}<br>
-      <span>{{ entry.message }} </span>
-    </p>
+  </div>  
+  <h4>The journey so far....</h4>
+  <p ng-repeat="entry in BooksShow.book.entries">
+    <strong>{{ entry.name }} </strong> at {{ entry.location }}<br>
+    <span>{{ entry.message }} </span>
+  </p>
 </div>

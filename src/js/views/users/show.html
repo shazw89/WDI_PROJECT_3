@@ -14,12 +14,12 @@
           <h5>{{ book.title }}, by {{ book.author }}</h5>
           <p>Short ID: {{ book.shortId }}</p>
           <ul>
-            <li ng-repeat="entry in book.entries">
-              {{ entry.message }}
+            <li ng-repeat="entry in book.entries" class="users-comments">
+              {{ entry.name }}: {{ entry.message }}
             </li>
           </ul>
           <a ui-sref="booksShow({ shortId: book.shortId })">
-            <p>Comments ({{ book.entries.length }} )</p>
+            <p>Comments ( {{ book.entries.length }} )</p>
           </a>
         </div>
       </div>

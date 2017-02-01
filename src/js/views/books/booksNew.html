@@ -28,9 +28,10 @@
     <h4>{{ books.book.author }}</h4>
     <p ng-show="books.book.description">{{ books.book.description }}</p>
 
-    <h4>Found the book? Tell us how!</h4>
+    <h4>Tell us about this book</h4>
     <form ng-submit="books.addBook()">
-      <textarea class="u-full-width" placeholder="The story goes like this..." ng-model="books.book.entries[0].name"></textarea>
+      <input class="u-full-width" type="text" placeholder="Where are you now?" ng-model="books.book.entries[0].location" required>
+      <textarea class="u-full-width" placeholder="The story goes like this..." ng-model="books.book.entries[0].message"></textarea>
       <input class="button" type="submit" value="Add story">
     </form>
 
