@@ -14,7 +14,7 @@
           <h5>{{ book.title }}, by {{ book.author }}</h5>
           <p>Short ID: {{ book.shortId }}</p>
           <ul>
-            <li ng-repeat="entry in book.entries">
+            <li ng-repeat="entry in book.entries" class="users-comments">
               {{ entry.name }}: {{ entry.message }}
             </li>
           </ul>
