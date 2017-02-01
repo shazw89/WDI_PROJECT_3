@@ -11,10 +11,10 @@
 </head>
 <body ng-controller="MainCtrl as main">
   <header>
+    <nav>
 
     <div class="menu-collapsed">
       <div class="bar"></div>
-      <nav>
         <ul>
           <li class="menu-link" ng-show="main.user">
             <a ng-click="main.hideMenu()" ui-sref="usersShow({ id: main.user._id })">My profile</a>
@@ -41,8 +41,9 @@
             <a ng-click="main.logout()">Logout</a>
           </li>
         </ul>
-      </nav>
     </div>
+    <p><a class="logo" href="/">FREE THE BOOKS</a></p>
+  </nav>
   </header>
 
   <main ui-view class="main-container container"></main>
