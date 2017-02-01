@@ -5,6 +5,7 @@ angular
 BooksShowCtrl.$inject = ['$stateParams', 'Book', '$state'];
 function BooksShowCtrl($stateParams, Book){
   const vm = this;
+  vm.found = $stateParams.found;
 
   Book
     .get({ shortId: $stateParams.shortId }).$promise
