@@ -23,6 +23,12 @@ function Router($stateProvider, $locationProvider, $urlRouterProvider){
     controller: 'LoginCtrl',
     controllerAs: 'login'
   })
+  .state('usersShow', {
+    url: '/users/:id',
+    templateUrl: '/js/views/users/show.html',
+    controller: 'UsersShowCtrl',
+    controllerAs: 'usersShow'
+  })
   .state('usersIndex', {
     url: '/users',
     templateUrl: '/js/views/users/index.html',
@@ -35,12 +41,33 @@ function Router($stateProvider, $locationProvider, $urlRouterProvider){
     controller: 'BooksNewCtrl',
     controllerAs: 'books'
   })
+  .state('booksShow', {
+    url: '/books/:shortId',
+    templateUrl: '/js/views/books/booksShow.html',
+    controller: 'BooksShowCtrl',
+    controllerAs: 'BooksShow'
+  })
   .state('booksIndex', {
-    url: '/books/index',
+    url: '/books',
     templateUrl: '/js/views/books/booksIndex.html',
     controller: 'BooksIndexCtrl',
     controllerAs: 'booksIndex'
+  })
+  .state('BooksRegister', {
+    url: '/books/:id/register',
+    templateUrl: '/js/views/books/booksRegister.html',
+    params: {
+      book: null,
+      id: null
+    },
+    controller: 'BooksRegisterCtrl',
+    controllerAs: 'BooksRegister'
+  })
+  .state('booksFound', {
+    url: '/found',
+    templateUrl: '/js/views/books/booksFound.html',
+    controller: 'BooksFoundCtrl',
+    controllerAs: 'booksFound'
   });
-
   $urlRouterProvider.otherwise('/');
 }

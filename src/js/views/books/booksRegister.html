@@ -1,0 +1,15 @@
+<div class="container">
+  <img src="{{ BooksRegister.book.volumeInfo.imageLinks.thumbnail }}" alt="">
+
+  <h1>{{ BooksRegister.book.volumeInfo.title }}</h1>
+  <h4>{{ BooksRegister.book.volumeInfo.authors[0] }}</h4>
+
+  <p>{{ BooksRegister.book.volumeInfo.description }}</p>
+
+  <h4>Tell us a story about the book</h4>
+  <form ng-submit="BooksRegister.addBook()">
+    <textarea class="u-full-width" placeholder="The story goes like this..." ng-model="BooksRegister.entry"></textarea>
+    <input class="button" type="submit" value="Add the book">
+  </form>
+
+</div>

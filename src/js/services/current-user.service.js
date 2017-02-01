@@ -15,8 +15,8 @@ function CurrentUserService(TokenService, $rootScope, User, $window, $state) {
         .then(data => {
           self.currentUser = data;
           $rootScope.$broadcast('loggedIn');
-          
-          console.log(self.currentUser);
+
+          // console.log(self.currentUser);
         });
     }
   };
@@ -26,7 +26,4 @@ function CurrentUserService(TokenService, $rootScope, User, $window, $state) {
     TokenService.removeToken();
     $rootScope.$broadcast('loggedOut');
   };
-
-
-
 }

@@ -1,0 +1,24 @@
+<h1>BOOKS INDEX</h1>
+
+<!-- <slick autoplay="true" autoplaySpeed="500" fade="true">
+<div ng-repeat="book in booksIndex.books">
+<img data-lazy="{{book.image}}">
+</div>
+</slick> -->
+
+<!-- <slick init-onload="false" slick-apply='slickApply' data="dataLoaded" slides-to-show="3" dots="true">
+  <div ng-repeat="book in booksIndex.books">
+    <span>
+      <img ng-src="{{ book.image }}" alt="{{ book.title }}"/>
+    </span>
+    <span>{{ item.label }}</span>
+  </div>
+</slick> -->
+
+<div class="book-index">
+  <ul>
+    <li ng-repeat="book in booksIndex.books" class="books-list">
+      <a ui-sref="booksShow({ shortId: book.shortId })"><img ng-src="{{ book.image }}" alt="{{ book.title }}"></a>
+    </li>
+  </ul>
+</div>

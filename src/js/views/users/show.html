@@ -1,0 +1,28 @@
+<section class="user-details">
+  <h2>Profile: {{ usersShow.user.username }}</h2>
+  <p>Email: <a href="mailto:{{ usersShow.user.email }}">{{ usersShow.user.email }}</a></p>
+</section>
+<section class="users-books">
+  <h2>Where are my books now?</h2>
+  <ul class="users-book-list">
+    <li ng-repeat="book in usersShow.user.books" >
+      <div class="user-book-tile">
+        <div class="user-book-image">
+          <img src="{{ book.image }}" alt="{{ book.title }}">
+        </div>
+        <div class="user-book-content">
+          <h5>{{ book.title }}, by {{ book.author }}</h5>
+          <p>Short ID: {{ book.shortId }}</p>
+          <ul>
+            <li ng-repeat="entry in book.entries">
+              {{ entry.name }}
+            </li>
+          </ul>
+          <a ui-sref="booksShow({ shortId: entry.shortId })">
+            <p>Comments ({{ book.entries.length }} )</p>
+          </a>
+        </div>
+      </div>
+    </li>
+  </ul>
+</section>
