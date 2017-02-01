@@ -15,7 +15,7 @@
           <p>Short ID: {{ book.shortId }}</p>
           <ul>
             <li ng-repeat="entry in book.entries">
-              {{ entry.name }}
+              {{ entry.message }}
             </li>
           </ul>
           <a ui-sref="booksShow({ shortId: book.shortId })">
