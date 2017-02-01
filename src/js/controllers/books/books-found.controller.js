@@ -11,7 +11,7 @@ function BooksFoundCtrl($state, Book) {
     Book
       .get({ shortId: vm.shortId }).$promise
       .then(() => {
-        $state.go('booksShow', { shortId: vm.shortId});
+        $state.go('booksShow', { shortId: vm.shortId, found: true });
       }).catch( () => {
         vm.message = 'Sorry. Try again.';
       });

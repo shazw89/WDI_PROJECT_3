@@ -45,7 +45,10 @@ function Router($stateProvider, $locationProvider, $urlRouterProvider){
     url: '/books/:shortId',
     templateUrl: '/js/views/books/booksShow.html',
     controller: 'BooksShowCtrl',
-    controllerAs: 'BooksShow'
+    controllerAs: 'BooksShow',
+    params: {
+      found: null
+    }
   })
   .state('booksIndex', {
     url: '/books',
