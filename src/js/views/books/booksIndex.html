@@ -4,8 +4,10 @@
   <div class="book-index">
     <slick slides-to-show="5" slides-to-scroll="3" init-onload="true"  data="booksIndex.books" class="slider multiple-items" dots="true" arrows="true" rows="2">
       <div ng-repeat="book in booksIndex.books">
-        <a ui-sref="booksShow({ shortId: book.shortId })"><img ng-src="{{ book.image }}" alt="{{ book.title }}" class="bookImageIndex"></a>
+        <a ui-sref="booksShow({ shortId: book.shortId })" class="bookLinkIndex"><img ng-src="{{ book.image }}" alt="{{ book.title }}" class="bookImageIndex"></a>
       </div>
     </slick>
   </div>
+
+ <div id="map"></div>
 </div>

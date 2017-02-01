@@ -15,10 +15,7 @@
 }
 
 .book-index {
-  height: 190px;
   margin: 0 auto;
-  border: 1px solid black;
-  background: black;
 }
 
 .user-details {
@@ -59,9 +56,22 @@
 }
 
 .bookImageIndex {
-  height: 190px;
   margin: 0 auto;
 }
+
+// vertically center the books
+.slick-initialized .slick-slide {
+    float: none;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+#map{
+    height:500px;
+    width:1000px;
+    box-shadow: 3px 3px 10px gray;
+    }
+
 
 ////////////////////////////////////////
 // MENU
