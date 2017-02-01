@@ -1,24 +1,11 @@
-<h1>BOOKS INDEX</h1>
+<div class="container">
+  <h1>Freed Books</h1>
 
-<!-- <slick autoplay="true" autoplaySpeed="500" fade="true">
-<div ng-repeat="book in booksIndex.books">
-<img data-lazy="{{book.image}}">
-</div>
-</slick> -->
-
-<!-- <slick init-onload="false" slick-apply='slickApply' data="dataLoaded" slides-to-show="3" dots="true">
-  <div ng-repeat="book in booksIndex.books">
-    <span>
-      <img ng-src="{{ book.image }}" alt="{{ book.title }}"/>
-    </span>
-    <span>{{ item.label }}</span>
+  <div class="book-index">
+    <slick slides-to-show="5" slides-to-scroll="3" init-onload="true"  data="booksIndex.books" class="slider multiple-items" dots="true" arrows="true" rows="2">
+      <div ng-repeat="book in booksIndex.books">
+        <a ui-sref="booksShow({ shortId: book.shortId })"><img ng-src="{{ book.image }}" alt="{{ book.title }}" class="bookImageIndex"></a>
+      </div>
+    </slick>
   </div>
-</slick> -->
-
-<div class="book-index">
-  <ul>
-    <li ng-repeat="book in booksIndex.books" class="books-list">
-      <a ui-sref="booksShow({ shortId: book.shortId })"><img ng-src="{{ book.image }}" alt="{{ book.title }}"></a>
-    </li>
-  </ul>
 </div>

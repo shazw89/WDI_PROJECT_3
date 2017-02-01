@@ -15,8 +15,10 @@
 }
 
 .book-index {
-  // max-width: 1000px;
-  // margin: 0 auto;
+  height: 190px;
+  margin: 0 auto;
+  border: 1px solid black;
+  background: black;
 }
 
 .user-details {
@@ -56,6 +58,10 @@
   width: 70%;
 }
 
+.bookImageIndex {
+  height: 190px;
+  margin: 0 auto;
+}
 
 ////////////////////////////////////////
 // MENU

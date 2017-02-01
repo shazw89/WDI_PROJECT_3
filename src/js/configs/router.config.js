@@ -56,16 +56,6 @@ function Router($stateProvider, $locationProvider, $urlRouterProvider){
     controller: 'BooksIndexCtrl',
     controllerAs: 'booksIndex'
   })
-  .state('BooksRegister', {
-    url: '/books/:id/register',
-    templateUrl: '/js/views/books/booksRegister.html',
-    params: {
-      book: null,
-      id: null
-    },
-    controller: 'BooksRegisterCtrl',
-    controllerAs: 'BooksRegister'
-  })
   .state('booksFound', {
     url: '/found',
     templateUrl: '/js/views/books/booksFound.html',
