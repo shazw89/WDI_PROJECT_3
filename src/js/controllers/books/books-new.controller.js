@@ -1,6 +1,6 @@
 angular
-  .module('angularAuthentication')
-  .controller('BooksNewCtrl', BooksNewCtrl);
+.module('angularAuthentication')
+.controller('BooksNewCtrl', BooksNewCtrl);
 
 BooksNewCtrl.$inject = ['User', 'CurrentUserService', 'Book', '$state','$http'];
 function BooksNewCtrl(User, CurrentUserService, Book, $state, $http){
@@ -14,32 +14,35 @@ function BooksNewCtrl(User, CurrentUserService, Book, $state, $http){
 
   function addBook() {
     Book
-      .save(vm.book).$promise
-      .then(res => {
-        $state.go('booksIndex');
-      });
+    .save(vm.book).$promise
+    .then(() => {
+      $state.go('booksIndex');
+    });
   }
 
   function selectBook() {
     if (vm.bookChosen) vm.showBook = true;
   }
 
-  function chooseBook($item, $model, $label){
+  function chooseBook($item){
     vm.bookChosen = true;
     vm.book = $item;
-    // console.log(vm.book);
   }
 
+  const alicea = ['AIzaSyBGIar1-BqChkNiJtRCpfftuSdR5j8kHd4','AIzaSyDX2sqMuT_3IultHEzBNB6pfWT_TnYS5xs'];
+
   function searchGoogle(val) {
-    return $http.get(`https://www.googleapis.com/books/v1/volumes?q=${val}&key=AIzaSyBGIar1-BqChkNiJtRCpfftuSdR5j8kHd4&fields=items`).then(function(response){
-      return response.data.items.map(function(item) {
+    const randomAlicea = alicea[Math.floor(Math.random()*alicea.length)];
+    return $http.get(`https://www.googleapis.com/books/v1/volumes?q=${val}&key=${randomAlicea}&fields=items`).then(function(response){
+      return response.data.items.filter(function(item) {
+        return (item.volumeInfo.authors && item.volumeInfo.title);
+      }).map(function(item) {
         return {
-          label: item.volumeInfo.title,
           title: item.volumeInfo.title,
           author: item.volumeInfo.authors[0],
-          image: item.volumeInfo.imageLinks.thumbnail,
-          description: item.volumeInfo.description,
-          googleId: item.id,
+          image: item.volumeInfo.imageLinks.thumbnail || false,
+          description: item.volumeInfo.description || false,
+          googleId: item.id || 'NA',
           user: CurrentUserService.currentUser._id,
           entries: []
         };
@@ -47,41 +50,3 @@ function BooksNewCtrl(User, CurrentUserService, Book, $state, $http){
     });
   }
 }
-
-
-  // function addBook() {
-  //   const user = CurrentUserService.currentUser;
-  //   const book = {
-  //     title: vm.book.volumeInfo.title,
-  //     author: vm.book.volumeInfo.authors[0],
-  //     image: vm.book.volumeInfo.imageLinks.thumbnail,
-  //     description: vm.book.volumeInfo.description,
-  //     googleId: $stateParams.id,
-  //     user: user._id,
-  //     // entries: [vm.entry]
-  //   };
-  //   Book.save(book).$promise
-  //   .then(res => {
-  //     $state.go('booksShow', { shortId: res.shortId });
-  //   });
-  // }
-
-
-
-  //
-  // vm.selectBook = function(book) {
-  //   $state.go('BooksRegister', {book: book, id: book.id});
-  // };
-  //
-  // vm.search = function() {
-  //   $http
-  //     .get(`https://www.googleapis.com/books/v1/volumes?q=${vm.newBook.searchTerm}&key=AIzaSyBGIar1-BqChkNiJtRCpfftuSdR5j8kHd4&fields=items`)
-  //     .then(response => {
-  //       vm.bookResults = response;
-  //       console.log('response :', vm.bookResults);
-  //       console.log(vm.bookResults.data.items);
-  //     })
-  //     .catch(err => {
-  //       console.log(err);
-  //     });
-  // };

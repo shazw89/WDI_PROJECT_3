@@ -12,7 +12,8 @@
     type="addBook"
     name="addBook"
     ng-model="books.asyncSelected"
-    uib-typeahead="book.title for book in books.searchGoogle($viewValue)"
+    uib-typeahead="book.title + ' (' + book.author + ')' for book in books.searchGoogle($viewValue)"
+    typeahead-wait-ms="500"
     typeahead-on-select="books.chooseBook($item, $model, $label)"
     placeholder="Search for a book"
     autocomplete="off">
@@ -21,15 +22,14 @@
     <input type="submit" value="Select" ng-show="books.bookChosen">
   </form>
   <div ng-show="books.showBook">
-    <img src="{{ books.book.image }}" alt="{{ books.book.title }}">
+    <img src="{{ books.book.image }}" alt="{{ books.book.title }}" ng-show="books.book.image">
 
     <h1>{{ books.book.title }}</h1>
     <h4>{{ books.book.author }}</h4>
-    <p>{{ books.book.description }}</p>
+    <p ng-show="books.book.description">{{ books.book.description }}</p>
 
     <h4>Found the book? Tell us how!</h4>
     <form ng-submit="books.addBook()">
-      <input type="text"
       <textarea class="u-full-width" placeholder="The story goes like this..." ng-model="books.book.entries[0].name"></textarea>
       <input class="button" type="submit" value="Add story">
     </form>
