@@ -14,7 +14,8 @@ const bookSchema = mongoose.Schema({
     message: { type: String, trim: true },
     location: { type: String, trim: true },
     lat: { type: Number, trim: true },
-    lng: { type: Number, trim: true }
+    lng: { type: Number, trim: true },
+    date: { type: Number }
   }, {
     timestamps: true
   }]

@@ -13,11 +13,27 @@ function BooksNewCtrl(User, CurrentUserService, Book, $state, $http){
   vm.bookChosen       = false;
 
   function addBook() {
-    Book
-    .save(vm.book).$promise
-    .then(() => {
-      $state.go('booksIndex');
-    });
+    $http
+      .get(`https://maps.googleapis.com/maps/api/geocode/json?address=${vm.location}&components=administrative_area:England&key=AIzaSyAzPfoyVbxG2oz378kpMkMszn2XtZn-1SU`)
+      .then(function(response) {
+        console.log(response);
+        vm.lat = response.data.results[0].geometry.location.lat;
+        vm.lng = response.data.results[0].geometry.location.lng;
+        vm.book.entries = [];
+        vm.book.entries.push({
+          name: vm.name,
+          message: vm.message,
+          location: vm.location,
+          lat: vm.lat,
+          lng: vm.lng,
+          time: Date.now()
+        });
+        Book
+        .save(vm.book).$promise
+        .then(() => {
+          $state.go('booksIndex');
+        });
+      });
   }
 
   function selectBook() {
@@ -48,8 +64,7 @@ function BooksNewCtrl(User, CurrentUserService, Book, $state, $http){
           googleId: item.id || 'NA',
           googleLink: item.selfLink,
           user: CurrentUserService.currentUser._id,
-          description: item.volumeInfo.description,
-          entries: []
+          description: item.volumeInfo.description
         };
       });
     });
