@@ -77,6 +77,24 @@
 // MENU
 ////////////////////////////////////////
 
+nav {
+  min-height: 55px;
+  display: block;
+  width: 100vw;
+  background-color: #CF4646;
+  font-family: 'Anton', sans-serif;
+
+  .logo {
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+    padding: .5em 0;
+    text-decoration: none;
+    color: black;
+    font-size: 1.5em;
+  }
+}
+
 .b-a {
    transition: all .25s;
    content: "";
@@ -160,16 +178,6 @@
          transform: rotate(-45deg);
       }
    }
-}
-h1 {
-   font-size: 3em;
-   text-align: center;
-   line-height: 250px;
-}
-p {
-   width: 80%;
-   margin: 0 auto;
-   line-height: 20px;
 }
 
 ul {
