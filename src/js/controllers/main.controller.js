@@ -22,5 +22,7 @@ function MainCtrl($rootScope, CurrentUserService, $state) {
     $state.go('login');
   });
 
-
+  $('.menu-collapsed').click(function() {
+    $(this).toggleClass('menu-expanded');
+  });
 }

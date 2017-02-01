@@ -1,68 +1,4 @@
 // Import all of your scss files here
-nav {
-  background: #333;
-  color: #fafafa;
-  padding: 12px 0;
-  .righ-side-navigation {
-    float: right;
-    margin: 0;
-    padding: 0;
-    li {
-      list-style-type: none;
-      display: inline-block;
-      margin-right: .7em;
-      margin-bottom: 0;
-    }
-    p {
-      margin-bottom: 0;
-    }
-  }
-}
-
-img {
-  width: 120px;
-  height: auto;
-}
-
-ul {
-  margin: 0 auto;
-  padding: 0;
-  display: inline-block;
-}
-
-.navbar {
-  min-width: 100vw;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  display: inline-block;
-  opacity: .7;
-  div {
-    text-align: center;
-    padding: 50px;
-    font-size: 2em;
-    color: white;
-  }
-}
-
-.navbar {
-  min-width: 100vw;
-  min-height: 150px;
-  background-image: url('http://marketingland.com/wp-content/ml-loads/2014/08/books-library-legal-ss-1920.jpg');
-  display: inline-block;
-}
-
-.foundBook {
-  background-image: url('http://www.startupremarkable.com/wp-content/uploads/2015/02/a-book-a-week-image.jpg');
-}
-
-.browseBooks {
-  background-image: url('http://urbanexpression.org.uk/wp-content/uploads/2015/11/bk-1.jpg');
-}
-
-.reportBook {
-  background-image: url('https://flavorwire.files.wordpress.com/2016/11/book-stock-image1.jpeg?w=1920')
-}
 
 .books-list {
   float: left;
@@ -118,4 +54,114 @@ ul {
   clear: right;
   float: right;
   width: 70%;
+}
+
+
+////////////////////////////////////////
+// MENU
+////////////////////////////////////////
+
+.b-a {
+   transition: all .25s;
+   content: "";
+   position: absolute;
+   left: 0;
+   height: 6px;
+   width: 30px;
+   border-radius: 15px;
+   background-color: black;
+}
+.menu-collapsed {
+   transition: all .25s;
+   position: fixed;
+   top: 10px;
+   left: 9px;
+   height: 36px;
+   width: 36px;
+   z-index: 1;
+   cursor: pointer;
+   ul {
+      transition: all 0s;
+      position: fixed;
+      left: -9000px;
+   }
+}
+.bar {
+   @extend .b-a;
+   position: fixed;
+   left: 12px;
+   top: 24px;
+   &:before {
+      @extend .b-a;
+      top: -8px;
+   }
+   &:after {
+      @extend .b-a;
+      top: 8px;
+   }
+}
+.b-a-expanded {
+   transition: all .25s;
+   top: -0px;
+}
+.menu-expanded {
+   transition: all .25s;
+   text-align: center;
+   line-height: 200px;
+   height: 100%;
+   width: 100%;
+   border-radius: 0px;
+   top: 0;
+   left: 0;
+   background-color: #CF4646;
+   ul {
+      transition: all 0s;
+      position: relative;
+      left: 0;
+      z-index: 2;
+   }
+   a {
+      transition: all .15s;
+      text-decoration: none;
+      font-size: 2em;
+      padding: 5px;
+      color: #222;
+      &:hover {
+         transition: all .15s;
+         letter-spacing: 2px;
+         border: 1px solid rgba(255, 255, 255, .15);
+      }
+   }
+   .bar {
+      background-color: transparent;
+      transition: all .25s;
+      &:before {
+         @extend .b-a-expanded;
+         transform: rotate(45deg);
+      }
+      &:after {
+         @extend .b-a-expanded;
+         transform: rotate(-45deg);
+      }
+   }
+}
+h1 {
+   font-size: 3em;
+   text-align: center;
+   line-height: 250px;
+}
+p {
+   width: 80%;
+   margin: 0 auto;
+   line-height: 20px;
+}
+
+ul {
+  .menu-link {
+    list-style-type: none;
+    margin: 0;
+    padding: .5em 2em;
+    max-height: 3em;
+    text-align: left;
+  }
 }
