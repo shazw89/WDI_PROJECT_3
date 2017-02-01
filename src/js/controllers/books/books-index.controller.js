@@ -5,5 +5,9 @@ angular
 BooksIndexCtrl.$inject = ['Book'];
 function BooksIndexCtrl(Book){
   const vm = this;
-  vm.books = Book.query();
+
+  Book.query().$promise
+  .then(response => {
+    vm.books = response;
+  });
 }

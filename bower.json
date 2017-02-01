@@ -20,14 +20,22 @@
     "angular-ui-router": "^0.3.2",
     "angular-resource": "^1.5.9",
     "skeleton": "^2.0.4",
-    "angular-slick": "^0.2.1",
-    "angular-bootstrap": "^2.5.0"
+    "angular-bootstrap": "^2.5.0",
+    "angular-slick": "^0.2.1"
   },
   "overrides": {
     "skeleton": {
       "main": [
         "css/normalize.css",
         "css/skeleton.css"
+      ]
+    },
+    "slick-carousel": {
+      "main": [
+        "slick/slick.css",
+        "slick/slick-theme.css",
+        "slick/slick.js",
+        "slick/fonts/*"
       ]
     }
   }
