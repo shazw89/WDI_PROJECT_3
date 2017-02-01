@@ -29,11 +29,21 @@
     <p ng-show="books.book.description">{{ books.book.description }}</p>
 
     <h4>Tell us about this book</h4>
+
     <form ng-submit="books.addBook()">
-      <input class="u-full-width" type="text" placeholder="Where are you now?" ng-model="books.book.entries[0].location" required>
-      <textarea class="u-full-width" placeholder="The story goes like this..." ng-model="books.book.entries[0].message"></textarea>
+      <div class="row">
+        <div class="six columns">
+          <label for="usernameInput">Name</label>
+          <input class="u-full-width" type="text" placeholder="Name" id="usernameInput" ng-model="books.entry.name">
+        </div>
+        <div class="six columns">
+          <label for="locationInput">Location*</label>
+          <input class="u-full-width" type="text" placeholder="Location" id="locationInput" ng-model="books.entry.location" required>
+        </div>
+      </div>
+      <label for="messageInput">Message*</label>
+      <textarea class="u-full-width" placeholder="The story goes like this..." id="messageInput" ng-model="books.entry.message" required></textarea>
       <input class="button" type="submit" value="Add story">
     </form>
-
   </div>
 </div>
