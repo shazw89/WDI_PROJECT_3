@@ -30,19 +30,24 @@ async.waterfall([
         user: user._id,
         title: 'The Wind-Up Bird Chronicle',
         author: 'Haruki Murakami',
-        image: 'http://books.google.com/books/content?id=0g5tCwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api'
+        image: 'http://books.google.com/books/content?id=0g5tCwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api',
+        description: 'A man named Toru Okada is searching the Tokyo suburbs for his wife\'s runaway cat, but soon finds himself searching for his missing wife as well.',
+        googleId: '0g5tCwAAQBAJ'
       },
       {
         user: user._id,
         title: 'The Rough Guide to London',
         author: 'Rob Humphreys',
-        image: 'https://books.google.com/books/content?id=6w2dngEACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api'
+        image: 'https://books.google.com/books/content?id=6w2dngEACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api',
+        googleId: '6w2dngEACAAJ'
       },
       {
         user: user._id,
         title: 'The Last Juror',
         author: 'John Grisham',
-        image: 'http://books.google.com/books/content?id=siuFipJkvoQC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api'
+        image: 'http://books.google.com/books/content?id=siuFipJkvoQC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api',
+        description: 'Evoking the past Mississippi in the early 1970s, a courtroom drama that\'s pulsating from start to finish. In 1970, The Ford County Times, one of Mississipi\'s more colourful weekly newspapers, went bankrupt. To the surprise and dismay of many, ownership was assumed by 23-year-old college drop-out, Willie Traynor. The future of the paper looked grim until a young mother was brutally raped and murdered by a member of the notorious Padgitt family. Traynor reported all the gruesome details, and his newspaper began to prosper. The murderer, Danny Padgitt, was tried before a packed courtroom in Clanton, Mississippi. The trial came to a startling, dramatic end when the defendant threatened revenge against the jurors if they convicted him. Nevertheless, they found him guilty, and he was sentenced to life in prison. But in Mississippi in 1970 \'life\' didn\'t necessarily mean \'life\', and nine years later Danny Padgitt managed to get himself paroled. He returned to Ford County, and the retribution began.',
+        googleId: 'siuFipJkvoQC'
       }
     ], (err, books) => {
       if (err) return done(err);

@@ -25,8 +25,13 @@ function BooksNewCtrl(User, CurrentUserService, Book, $state, $http){
   }
 
   function chooseBook($item){
-    vm.bookChosen = true;
-    vm.book = $item;
+    const randomAlicea = alicea[Math.floor(Math.random()*alicea.length)];
+    $http.get(`${$item.googleLink}`).then(function(response) {
+      console.log(response);
+      vm.bookChosen = true;
+      vm.book = $item;
+      vm.book.image = response.data.volumeInfo.imageLinks.thumbnail || false;
+    });
   }
 
   const alicea = ['AIzaSyBGIar1-BqChkNiJtRCpfftuSdR5j8kHd4','AIzaSyDX2sqMuT_3IultHEzBNB6pfWT_TnYS5xs'];
@@ -40,10 +45,10 @@ function BooksNewCtrl(User, CurrentUserService, Book, $state, $http){
         return {
           title: item.volumeInfo.title,
           author: item.volumeInfo.authors[0],
-          image: item.volumeInfo.imageLinks.thumbnail || false,
-          description: item.volumeInfo.description || false,
           googleId: item.id || 'NA',
+          googleLink: item.selfLink,
           user: CurrentUserService.currentUser._id,
+          description: item.volumeInfo.description,
           entries: []
         };
       });
