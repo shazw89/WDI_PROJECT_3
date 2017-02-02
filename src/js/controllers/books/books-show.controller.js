@@ -12,7 +12,7 @@ function BooksShowCtrl($stateParams, Book, $state, $http){
   .get({ shortId: $stateParams.shortId }).$promise
   .then((response) => {
     vm.book = response;
-    console.log(vm.book);
+    console.log('Data being received: ', vm.book);
     // for (const book of vm.books) {
     for (const entry of vm.book.entries) {
       const latlng = new google.maps.LatLng(entry.lat, entry.lng);
@@ -26,6 +26,7 @@ function BooksShowCtrl($stateParams, Book, $state, $http){
           content: `
           <h6>${vm.book.title}</h6>
           <p>${entry.name}</p>
+          <p><em>Last entry by: </em>${entry.name} on ${new Date(entry.date).toDateString()}</p>
           `
         });
         if (infoWindows[0]) infoWindows[0].close();
@@ -49,14 +50,14 @@ function BooksShowCtrl($stateParams, Book, $state, $http){
   vm.updateEntries = updateEntries;
 
   function updateEntries() {
-    console.log(vm.entry);
+    console.log('Data being posted: ', vm.entry);
 
     $http
     .get(`https://maps.googleapis.com/maps/api/geocode/json?address=Hammersmith&components=administrative_area:England&key=AIzaSyAzPfoyVbxG2oz378kpMkMszn2XtZn-1SU`)
     .then(function(response) {
       vm.entry.lat = response.data.results[0].geometry.location.lat;
       vm.entry.lng = response.data.results[0].geometry.location.lng;
-      vm.entry.time = Date.now();
+      vm.entry.date = Date.now();
       vm.book.entries.push(vm.entry);
       Book.update({shortId: $stateParams.shortId}, vm.book);
       vm.entry = {};
