@@ -1,6 +1,6 @@
 <div class="container">
   <div class="book-image">
-    <img src="{{ BooksShow.book.image }}" alt="">
+    <img src="{{ BooksShow.book.image }}" alt="{{ BooksShow.book.title }}">
   </div>
   <div class="book-details">
     <h1>{{ BooksShow.book.title }}</h1>
@@ -9,7 +9,7 @@
   </div>
 
 <!-- ========================= -->
-  <div ng-show="BooksShow.found">
+  <div ng-show="BooksShow.found" class="book-show-form">
     <h4>Found the book? Tell us how!</h4>
     <form ng-submit="BooksShow.updateEntries()">
       <div class="row">
