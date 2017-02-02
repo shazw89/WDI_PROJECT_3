@@ -20,7 +20,7 @@
  <h1 ng-show="main.user">TOP USERS</h1>
 
  <div class="book-index">
-   <slick slides-to-show="5" slides-to-scroll="3" init-onload="true"  data="booksIndex.users" class="slider multiple-items" dots="true" arrows="true" rows="2">
+   <slick slides-to-show="5" slides-to-scroll="3" init-onload="true"  data="booksIndex.users" class="slider multiple-items" dots="true" arrows="true">
      <div ng-repeat="user in booksIndex.users">
        <span ng-click="booksIndex.showUserInfo(user)"><img ng-src="{{ user.img }}" alt="{{ user.username }}" class="bookImageIndex" ng-class="{animated: hover, pulse: hover}" ng-mouseenter="hover = true" ng-mouseleave="hover = false"></span>
        <!-- <a ui-sref="usersShow({ id: user._id })" class="bookLinkIndex"><img ng-src="{{ user.img }}" alt="{{ user.username }}" class="bookImageIndex"></a> -->

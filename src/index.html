@@ -19,6 +19,9 @@
     <div class="menu-collapsed">
       <div class="bar"></div>
         <ul>
+          <li class="menu-link">
+            <a ng-click="main.hideMenu()" href="/">HOME</a>
+          </li>
           <li class="menu-link" ng-show="main.user">
             <a ng-click="main.hideMenu()" ui-sref="usersShow({ id: main.user._id })">PROFILE</a>
           </li>
