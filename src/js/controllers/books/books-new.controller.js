@@ -25,7 +25,7 @@ function BooksNewCtrl(User, CurrentUserService, Book, $state, $http){
           location: vm.location,
           lat: vm.lat,
           lng: vm.lng,
-          time: Date.now()
+          date: Date.now()
         });
         Book
         .save(vm.book).$promise
