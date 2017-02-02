@@ -29,12 +29,12 @@ function Router($stateProvider, $locationProvider, $urlRouterProvider){
     controller: 'UsersShowCtrl',
     controllerAs: 'usersShow'
   })
-  .state('usersIndex', {
-    url: '/users',
-    templateUrl: '/js/views/users/index.html',
-    controller: 'UsersIndexCtrl',
-    controllerAs: 'usersIndex'
-  })
+  // .state('usersIndex', {
+  //   url: '/users',
+  //   templateUrl: '/js/views/users/index.html',
+  //   controller: 'UsersIndexCtrl',
+  //   controllerAs: 'usersIndex'
+  // })
   .state('booksNew', {
     url: '/books/new',
     templateUrl: '/js/views/books/booksNew.html',

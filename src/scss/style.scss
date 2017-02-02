@@ -1,4 +1,10 @@
 // Import all of your scss files here
+.slick-next:before,
+.slick-next:after,
+.slick-prev:before,
+.slick-prev:before {
+    color: black;
+}
 
 .books-list {
   float: left;
@@ -8,10 +14,16 @@
   width: 200px;
 }
 
-.main-container {
-  // border: 1px solid red;
-  margin: 0 auto;
-  max-width: 1140px;
+main {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.main-logo {
+  background-color: #CF4646;
+  text-align: center;
+  margin-top: 0;
+  padding-bottom: 3em;
 }
 
 .book-index {
@@ -96,12 +108,11 @@
 ////////////////////////////////////////
 
 nav {
-  min-height: 55px;
+  min-height: 75px;
   display: block;
   width: 100vw;
   background-color: #CF4646;
   font-family: 'Anton', sans-serif;
-
   .logo {
     text-align: center;
     display: block;
@@ -109,7 +120,10 @@ nav {
     padding: .5em 0;
     text-decoration: none;
     color: black;
-    font-size: 1.5em;
+    font-size: 2em;
+  }
+  p {
+    margin: 0;
   }
 }
 
