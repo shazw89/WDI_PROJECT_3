@@ -33,7 +33,7 @@
     <p ng-repeat="entry in BooksShow.book.entries">
       <strong>{{ entry.name }} </strong> at {{ entry.location }}<br>
       <span>{{ entry.message }} </span><br>
-      Last seen: {{ entry.date }}
+      Last seen: {{ entry.date | date:'dd/MM/yyyy HH:mm'}}<br>
     </p>
   </div>
   <div id="map"></div>
