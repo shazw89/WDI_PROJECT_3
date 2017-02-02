@@ -104,13 +104,19 @@ main {
   height: 500px;
 }
 
-// .two {
-//   background: red;
-// }
-//
-// .ten {
-//   background: blue;
-// }
+.book-image {
+  float:left;
+  max-width: 20%;
+}
+
+.book-details {
+ float:right;
+ max-width: 75%;
+}
+
+.book-journey {
+  clear: both;
+}
 
 ////////////////////////////////////////
 // MENU
