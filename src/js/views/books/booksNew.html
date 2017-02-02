@@ -1,15 +1,13 @@
 <div class="container">
 
-  <h2>Drop a book</h2>
+  <h2>Free A Book</h2>
 
   <form ng-submit="books.selectBook()" ng-hide="books.showBook">
-    <div class="row">
-      <div class="ten columns">
         <label for="book-detail">Enter a title, author, or ISBN</label>
         <input
     class="u-full-width"
     id="book-detail"
-    type="addBook"
+    type="text"
     name="addBook"
     ng-model="books.asyncSelected"
     uib-typeahead="book.title + ' (' + book.author + ')' for book in books.searchGoogle($viewValue)"
@@ -17,8 +15,6 @@
     typeahead-on-select="books.chooseBook($item, $model, $label)"
     placeholder="Search for a book"
     autocomplete="off">
-      </div>
-    </div>
     <input type="submit" value="Select" ng-show="books.bookChosen">
   </form>
   <div ng-show="books.showBook">

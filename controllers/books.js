@@ -9,7 +9,9 @@ module.exports = {
 const Book = require('../models/book');
 
 function booksIndex(req, res) {
-  Book.find((err, books) => {
+  Book.find({})
+  .populate('user')
+  .exec((err, books) => {
     if(err) return res.status(500).json({ message: 'Something went wrong.' });
     return res.status(200).json(books);
   });

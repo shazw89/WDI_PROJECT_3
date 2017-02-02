@@ -133,6 +133,47 @@ main {
   clear: both;
 }
 
+.bookIcon {
+  width: 30px;
+}
+
+.slick-initialized .slick-slide.feedBox {
+  text-align: center;
+  vertical-align: top;
+
+  img {
+    margin: 0 auto;
+  }
+}
+
+.loader {
+  cursor: pointer;
+  &:hover {
+    color: lighten(black, 25%);
+    text-decoration: underline;
+  }
+}
+
+.container.index {
+  text-align: center;
+}
+
+div.test {
+  text-align: center;
+  display: inline-block;
+  margin: 1px;
+  width: 49%;
+  height: 300px;
+  vertical-align: top;
+  img {
+    width: 100%;
+  }
+  @media screen and (min-width: 600px) {
+    width: 19%;
+  }
+}
+
+
 ////////////////////////////////////////
 // MENU
 ////////////////////////////////////////

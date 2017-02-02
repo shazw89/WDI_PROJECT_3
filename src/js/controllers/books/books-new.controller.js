@@ -42,12 +42,8 @@ function BooksNewCtrl(User, CurrentUserService, Book, $state, $http){
 
   function chooseBook($item){
     const randomAlicea = alicea[Math.floor(Math.random()*alicea.length)];
-    $http.get(`${$item.googleLink}`).then(function(response) {
-      console.log(response);
-      vm.bookChosen = true;
-      vm.book = $item;
-      vm.book.image = response.data.volumeInfo.imageLinks.thumbnail || false;
-    });
+    vm.bookChosen = true;
+    vm.book = $item;
   }
 
   const alicea = ['AIzaSyBGIar1-BqChkNiJtRCpfftuSdR5j8kHd4','AIzaSyDX2sqMuT_3IultHEzBNB6pfWT_TnYS5xs'];
@@ -56,11 +52,13 @@ function BooksNewCtrl(User, CurrentUserService, Book, $state, $http){
     const randomAlicea = alicea[Math.floor(Math.random()*alicea.length)];
     return $http.get(`https://www.googleapis.com/books/v1/volumes?q=${val}&key=${randomAlicea}&fields=items`).then(function(response){
       return response.data.items.filter(function(item) {
-        return (item.volumeInfo.authors && item.volumeInfo.title);
+        console.log(item);
+        return (item.volumeInfo.authors && item.volumeInfo.title && item.volumeInfo.imageLinks);
       }).map(function(item) {
         return {
           title: item.volumeInfo.title,
           author: item.volumeInfo.authors[0],
+          image: item.volumeInfo.imageLinks.thumbnail,
           googleId: item.id || 'NA',
           googleLink: item.selfLink,
           user: CurrentUserService.currentUser._id,
