@@ -1,10 +1,14 @@
 <div class="container">
-  <div class="book-image">
-    <img src="{{ BooksShow.book.image }}" alt="{{ BooksShow.book.title }}">
+  <div class="book-wrapper">
+    <div class="book-image">
+      <img src="{{ BooksShow.book.image }}" alt="{{ BooksShow.book.title }}">
+    </div>
+    <div class="book-details">
+      <h1 class="book-header">{{ BooksShow.book.title }}</h1>
+      <h4 class="book-header">{{ BooksShow.book.author }}</h4>
+    </div>
   </div>
-  <div class="book-details">
-    <h1 class="book-header">{{ BooksShow.book.title }}</h1>
-    <h4 class="book-header">{{ BooksShow.book.author }}</h4>
+  <div class="book-description">
     <p>{{ BooksShow.book.description }}</p>
   </div>
 
