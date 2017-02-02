@@ -31,7 +31,11 @@ main {
 }
 
 .main-logo {
-  background-color: #CF4646;
+  // background-color: #CF4646;
+  background: #cf4646; /* Old browsers */
+background: -moz-linear-gradient(top, #cf4646 0%, #ce8888 44%, #ededed 100%, #dddddd 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top, #cf4646 0%,#ce8888 44%,#ededed 100%,#dddddd 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom, #cf4646 0%,#ce8888 44%,#ededed 100%,#dddddd 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   text-align: center;
   margin-top: 0;
   padding-bottom: 3em;
