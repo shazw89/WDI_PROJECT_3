@@ -1,4 +1,4 @@
-<h1>Freed Books</h1>
+<h1>FREED BOOKS</h1>
 
 <div class="book-index">
   <slick slides-to-show="5" slides-to-scroll="3" init-onload="true"  data="booksIndex.books" class="slider multiple-items" dots="true" arrows="true" rows="2">
@@ -8,4 +8,13 @@
   </slick>
 </div>
 
-<div id="map"></div>
+<h1>TOP USERS</h1>
+
+<div class="book-index">
+  <slick slides-to-show="5" slides-to-scroll="3" init-onload="true"  data="booksIndex.users" class="slider multiple-items" dots="true" arrows="true" rows="2">
+    <div ng-repeat="user in booksIndex.users">
+      <a ui-sref="usersShow({ id: user._id })" class="bookLinkIndex"><img ng-src="{{ user.img }}" alt="{{ user.username }}" class="bookImageIndex"></a>
+    </div>
+  </slick>
+</div>
+<!-- <div id="map"></div> -->
