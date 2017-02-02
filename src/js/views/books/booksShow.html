@@ -1,10 +1,14 @@
 <div class="container">
-  <div class="book-image">
-    <img src="{{ BooksShow.book.image }}" alt="{{ BooksShow.book.title }}">
+  <div class="book-wrapper">
+    <div class="book-image">
+      <img src="{{ BooksShow.book.image }}" alt="{{ BooksShow.book.title }}">
+    </div>
+    <div class="book-details">
+      <h1 class="book-header">{{ BooksShow.book.title }}</h1>
+      <h4 class="book-header">{{ BooksShow.book.author }}</h4>
+    </div>
   </div>
-  <div class="book-details">
-    <h1 class="book-header">{{ BooksShow.book.title }}</h1>
-    <h4 class="book-header">{{ BooksShow.book.author }}</h4>
+  <div class="book-description">
     <p>{{ BooksShow.book.description }}</p>
   </div>
 
@@ -31,10 +35,10 @@
   <div class="book-journey">
     <h4 class="book-header">The journey so far....</h4>
     <p ng-repeat="entry in BooksShow.book.entries">
-      <strong>{{ entry.name }} </strong> at {{ entry.location }}<br>
-      <span>{{ entry.message }} </span>
+      <strong>{{ entry.name }} </strong> - {{ entry.location }}<br>
+      <q class="comment-indent">{{ entry.message }}</q>
       <br>
-      <span ng-show="entry.date"><strong>Last seen:</strong> {{ entry.date | date:'dd/MM/yyyy HH:mm'}}</span><br>
+      <span ng-show="entry.date"><strong>Last seen:</strong> {{ entry.date | date:'dd/MM/yyyy HH:mm'}}</span>
     </p>
   </div>
   <div id="map"></div>

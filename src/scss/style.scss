@@ -91,16 +91,16 @@ ul li {
   width: 100%;
 }
 
-.book-header {
-  text-align: left;
-}
-
 .user-book-image {
   // border: 1px solid red;
   clear: left;
   float: left;
   padding-top: 1.5em;
   width: 25%;
+}
+
+.comment-indent {
+  padding-left: 1em;
 }
 
 .user-book-content {
@@ -134,62 +134,37 @@ ul li {
   height: 500px;
 }
 
+.book-wrapper {
+  clear: both;
+  margin-bottom: 2em;
+}
+
 .book-image {
-  float: left;
-  margin-top: 60px;
+  display: inline-block;
   text-align: center;
-  width: 25%;
+  width: 20%;
 }
 
 .book-details {
- float:right;
+ display: inline-block;
  max-width: 75%;
+ text-align: left;
+ vertical-align: baseline;
+}
+
+.book-header {
+  margin-top: 0;
+  text-align: left;
+}
+
+.book-description {
+  clear: both;
+  margin-top: 2em;
 }
 
 .book-journey, .book-show-form {
   clear: both;
 }
-
-.bookIcon {
-  width: 30px;
-}
-
-.slick-initialized .slick-slide.feedBox {
-  text-align: center;
-  vertical-align: top;
-
-  img {
-    margin: 0 auto;
-  }
-}
-
-.loader {
-  cursor: pointer;
-  &:hover {
-    color: lighten(black, 25%);
-    text-decoration: underline;
-  }
-}
-
-.container.index {
-  text-align: center;
-}
-
-div.test {
-  text-align: center;
-  display: inline-block;
-  margin: 1px;
-  width: 49%;
-  height: 300px;
-  vertical-align: top;
-  img {
-    width: 100%;
-  }
-  @media screen and (min-width: 600px) {
-    width: 19%;
-  }
-}
-
 
 ////////////////////////////////////////
 // MENU
