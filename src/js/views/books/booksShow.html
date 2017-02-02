@@ -1,11 +1,15 @@
 <div class="container">
-  <img src="{{ BooksShow.book.image }}" alt="">
+  <div class="book-image">
+    <img src="{{ BooksShow.book.image }}" alt="{{ BooksShow.book.title }}">
+  </div>
+  <div class="book-details">
+    <h1>{{ BooksShow.book.title }}</h1>
+    <h4>{{ BooksShow.book.author }}</h4>
+    <p>{{ BooksShow.book.description }}</p>
+  </div>
 
-  <h1>{{ BooksShow.book.title }}</h1>
-  <h4>{{ BooksShow.book.author }}</h4>
-  <p>{{ BooksShow.book.description }}</p>
-
-  <div ng-show="BooksShow.found">
+<!-- ========================= -->
+  <div ng-show="BooksShow.found" class="book-show-form">
     <h4>Found the book? Tell us how!</h4>
     <form ng-submit="BooksShow.updateEntries()">
       <div class="row">
@@ -22,10 +26,14 @@
       <textarea class="u-full-width" placeholder="The story goes like this..." id="messageInput" ng-model="BooksShow.entry.message" required></textarea>
       <input class="button" type="submit" value="Add story">
     </form>
-  </div>  
-  <h4>The journey so far....</h4>
-  <p ng-repeat="entry in BooksShow.book.entries">
-    <strong>{{ entry.name }} </strong> at {{ entry.location }}<br>
-    <span>{{ entry.message }} </span>
-  </p>
+  </div>
+  <!-- ========================= -->
+  <div class="book-journey">
+    <h4>The journey so far....</h4>
+    <p ng-repeat="entry in BooksShow.book.entries">
+      <strong>{{ entry.name }} </strong> at {{ entry.location }}<br>
+      <span>{{ entry.message }} </span>
+    </p>
+  </div>
+  <div id="map"></div>
 </div>
