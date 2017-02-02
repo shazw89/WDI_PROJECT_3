@@ -1,12 +1,14 @@
 body {
   background: #F7F7F7;
+  margin-bottom: 0px;
 }
+
 
 #mapProfile {
   border: 1px solid #dddddd;
 }
 
-// Import all of your scss files here
+// slick arrows
 .slick-next:before,
 .slick-next:after,
 .slick-prev:before,
@@ -25,6 +27,7 @@ body {
 main {
   margin-top: 0;
   padding-top: 0;
+  padding-bottom: 3em;
 }
 
 .main-logo {
@@ -153,6 +156,7 @@ nav {
     text-decoration: none;
     color: black;
     font-size: 2em;
+    font-family: 'Anton', sans-serif;
   }
   p {
     margin: 0;
@@ -251,6 +255,9 @@ ul {
     padding: .5em 2em;
     max-height: 3em;
     text-align: left;
+    a {
+
+    }
   }
 }
 
@@ -271,9 +278,16 @@ h1, h2, h3, h4, h5 {
 
 .quoteAuthor {
   text-align: right;
-  padding-right: 9em;
 }
 
 .manifesto {
   max-width: 700px;
+  a.button {
+    display: block;
+    background-color: #CF4646;
+    outline: none;
+    color: black;
+    font-size: 1.2em;
+    font-family: 'Anton', sans-serif;
+  }
 }
