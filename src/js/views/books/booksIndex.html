@@ -14,7 +14,8 @@
   <!-- {{ booksIndex.chosenBook }} -->
   <h2>{{ booksIndex.chosenBook.title }} by {{ booksIndex.chosenBook.author}}</h2><br>
   {{ booksIndex.chosenBook.entries[0].name }} at {{ booksIndex.chosenBook.entries[0].location }}<br>
-  <strong>{{ booksIndex.chosenBook.entries[0].message }}</strong>
+  <strong>{{ booksIndex.chosenBook.entries[0].message }}</strong><br>
+  <a class="button" ui-sref="bookShow({ shortId: book.shortId })">Find out more about {{ booksIndex.chosenBook.title }}</a>
 </div>
   <h1 ng-show="main.user">TOP USERS</h1>
 
