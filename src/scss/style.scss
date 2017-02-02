@@ -115,14 +115,19 @@ ul li {
   height: 500px;
 }
 .book-image {
-  float: left;
-  margin-top: 60px;
+  float: right;
+  margin-right: 60px;
   text-align: center;
   width: 25%;
 }
 .book-details {
- float:right;
+  text-align: center;
  max-width: 75%;
+}
+
+.book-description {
+  max-width: 620px;
+  text-align: justify;
 }
 .book-journey, .book-show-form {
   clear: both;
@@ -306,4 +311,9 @@ h1, h2, h3, h4, h5 {
     font-size: 1.2em;
     font-family: 'Anton', sans-serif;
   }
+}
+
+.book-thumbnail-new {
+  display: block;
+  margin: 0 auto;
 }
