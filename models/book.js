@@ -15,7 +15,7 @@ const bookSchema = mongoose.Schema({
     location: { type: String, trim: true },
     lat: { type: Number, trim: true },
     lng: { type: Number, trim: true },
-    date: { type: Number }
+    date: { type: Date }
   }, {
     timestamps: true
   }]

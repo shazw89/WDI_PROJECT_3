@@ -6,6 +6,7 @@
   <title>The Wandering Chronicle</title>
   <base href="/" />
   <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Slabo+27px" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" rel="stylesheet">
   <!-- inject:js -->
   <!-- endinject -->
@@ -20,6 +21,9 @@
     <div class="menu-collapsed">
       <div class="bar"></div>
         <ul>
+          <li class="menu-link">
+            <a ng-click="main.hideMenu()" href="/">HOME</a>
+          </li>
           <li class="menu-link" ng-show="main.user">
             <a ng-click="main.hideMenu()" ui-sref="usersShow({ id: main.user._id })">PROFILE</a>
           </li>

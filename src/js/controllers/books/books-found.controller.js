@@ -13,7 +13,7 @@ function BooksFoundCtrl($state, Book) {
       .then(() => {
         $state.go('booksShow', { shortId: vm.shortId, found: true });
       }).catch( () => {
-        vm.message = 'Sorry. Try again.';
+        vm.message = 'Invalid code. Try again.';
       });
   }
 

@@ -1,12 +1,14 @@
 body {
   background: #F7F7F7;
+  margin-bottom: 0px;
 }
+
 
 #mapProfile {
   border: 1px solid #dddddd;
 }
 
-// Import all of your scss files here
+// slick arrows
 .slick-next:before,
 .slick-next:after,
 .slick-prev:before,
@@ -25,10 +27,20 @@ body {
 main {
   margin-top: 0;
   padding-top: 0;
+  padding-bottom: 3em;
+p {
+  font-family: 'Slabo 27px', serif;
+  font-size: 1.5em;
+};
+ul li {
+  font-family: 'Slabo 27px', serif;
+  font-size: 1.5em;
+}
 }
 
 .main-logo {
   background-color: #CF4646;
+  // background-image: url('http://www.imgbase.info/images/safe-wallpapers/miscellaneous/flags/42753_flags_japan_rising_sun_flag.jpg');
   text-align: center;
   margin-top: 0;
   padding-bottom: 3em;
@@ -76,6 +88,10 @@ main {
 .user-book-tile {
   // padding: 2em 0;
   width: 100%;
+}
+
+.book-header {
+  text-align: left;
 }
 
 .user-book-image {
@@ -194,6 +210,7 @@ nav {
     text-decoration: none;
     color: black;
     font-size: 2em;
+    font-family: 'Anton', sans-serif;
   }
   p {
     margin: 0;
@@ -292,6 +309,9 @@ ul {
     padding: .5em 2em;
     max-height: 3em;
     text-align: left;
+    a {
+
+    }
   }
 }
 
@@ -300,4 +320,28 @@ h1, h2, h3, h4, h5 {
   font-family: 'Anton', sans-serif;
   text-align: center;
   margin-top: 1em;
+}
+
+.quote {
+  // border-left: 4px solid #CF4646;
+  // margin-left: 5em;
+  // padding-left: 1em;
+  font-size: 2em;
+  text-align: center;
+}
+
+.quoteAuthor {
+  text-align: right;
+}
+
+.manifesto {
+  max-width: 700px;
+  a.button {
+    display: block;
+    background-color: #CF4646;
+    outline: none;
+    color: black;
+    font-size: 1.2em;
+    font-family: 'Anton', sans-serif;
+  }
 }
