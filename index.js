@@ -23,9 +23,9 @@ app.use('/api', expressJWT({ secret: config.secret })
       { url: '/api/register', methods: ['POST'] },
       { url: '/api/login',    methods: ['POST'] },
       { url: '/api/books',    methods: ['GET'] },
-      // broken - needs regex (alex sending):
-      { url: '/api/books/:shortId', methods: ['GET'] },
-      { url: '/api/users',    methods: ['GET'] }
+      { url: '/api/users',    methods: ['GET'] },
+      // allow access to any address beginning /api/books/:
+      { url: /api\/books\/[^\/]*/, methods: ['GET'] }
     ]
   }));
 app.use(jwtErrorHandler);

@@ -5,6 +5,7 @@
   <title>The Wandering Chronicle</title>
   <base href="/" />
   <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" rel="stylesheet">
   <!-- inject:js -->
   <!-- endinject -->
   <!-- inject:css -->
@@ -18,6 +19,9 @@
     <div class="menu-collapsed">
       <div class="bar"></div>
         <ul>
+          <li class="menu-link">
+            <a ng-click="main.hideMenu()" href="/">HOME</a>
+          </li>
           <li class="menu-link" ng-show="main.user">
             <a ng-click="main.hideMenu()" ui-sref="usersShow({ id: main.user._id })">PROFILE</a>
           </li>
@@ -27,20 +31,14 @@
           <li class="menu-link" ng-hide="main.user">
             <a ui-sref="login">SIGN IN</a>
           </li>
+          <li class="menu-link" ng-show="main.user">
+            <a ui-sref="booksNew">FREE A BOOK</a>
+          </li>
           <li class="menu-link">
             <a ui-sref="booksFound">I FOUND A BOOK</a>
           </li>
-          <li class="menu-link" ng-show="main.user">
-            <a ui-sref="booksNew">LIST A NEW BOOK</a>
-          </li>
-          <li class="menu-link" ng-show="main.user">
-            <a ui-sref="usersIndex">Users (Dev)</a>
-          </li>
           <li class="menu-link">
-            <a ui-sref="booksIndex">BOOKS</a>
-          </li>
-          <li class="menu-link" ng-show="main.user">
-            <a ng-click="main.logout()">Logout (dev)</a>
+            <a ui-sref="booksIndex">LIBERATED BOOKS</a>
           </li>
         </ul>
     </div>
