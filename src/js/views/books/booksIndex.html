@@ -13,8 +13,8 @@
 <div class="bookIndex-description" ng-if="booksIndex.showInfo">
   <!-- {{ booksIndex.chosenBook }} -->
   <h2>{{ booksIndex.chosenBook.title }} by {{ booksIndex.chosenBook.author}}</h2><br>
-  {{ booksIndex.chosenBook.entries[0].name }} at {{ booksIndex.chosenBook.entries[0].location }}<br>
-  <strong>{{ booksIndex.chosenBook.entries[0].message }}</strong>
+  {{ booksIndex.chosenBook.entries[booksIndex.chosenBook.entries.length-1].name }} at {{ booksIndex.chosenBook.entries[booksIndex.chosenBook.entries.length-1].location }}<br>
+  <strong>{{ booksIndex.chosenBook.entries[booksIndex.chosenBook.entries.length-1].message }}</strong>
 </div>
   <h1 ng-show="main.user">TOP USERS</h1>
 
