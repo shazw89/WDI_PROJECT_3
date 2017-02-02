@@ -23,6 +23,8 @@ app.use('/api', expressJWT({ secret: config.secret })
       { url: '/api/register', methods: ['POST'] },
       { url: '/api/login',    methods: ['POST'] },
       { url: '/api/books',    methods: ['GET'] },
+      // broken - needs regex (alex sending):
+      { url: '/api/books/:shortId', methods: ['GET'] }
     ]
   }));
 app.use(jwtErrorHandler);
