@@ -50,10 +50,9 @@ function BooksIndexCtrl(Book, User){
   // vm.markers = [];
   vm.showDescription = showDescription;
   vm.showInfo = false;
-  function showDescription(book) {
-    console.log('clicked');
+  function showDescription(bookOrUser) {
     vm.showInfo = true;
-    vm.chosenBook = book;
+    vm.chosenBookOrUser = bookOrUser;
   }
 
 }
