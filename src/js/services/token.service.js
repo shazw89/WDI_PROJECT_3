@@ -23,4 +23,5 @@ function TokenService($window, jwtHelper) {
     $window.localStorage.clear();
   };
 
+
 }
