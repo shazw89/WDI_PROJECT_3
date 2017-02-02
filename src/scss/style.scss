@@ -136,9 +136,10 @@ nav {
   background-color: #CF4646;
   font-family: 'Anton', sans-serif;
   margin-bottom: 50px;
+  text-align: center;
   .logo {
     text-align: center;
-    display: block;
+    display: inline-block;
     margin: 0 auto;
     padding: .5em 0;
     text-decoration: none;
