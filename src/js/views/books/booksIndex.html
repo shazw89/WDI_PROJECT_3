@@ -1,0 +1,37 @@
+<div class="container">
+ <h1>FREED BOOKS</h1>
+
+ <div class="book-index">
+   <slick slides-to-show="5" slides-to-scroll="3" init-onload="true"  data="booksIndex.books" class="slider multiple-items" dots="true" arrows="true" rows="2">
+     <div ng-repeat="book in booksIndex.books">
+       <span ng-click="booksIndex.showBookInfo(book)" class="bookLinkIndex"><img ng-src="{{ book.image }}" alt="{{ book.title }}" class="bookImageIndex"></span>
+       <!-- <a ui-sref="booksShow({ shortId: book.shortId })" class="bookLinkIndex"><img ng-src="{{ book.image }}" alt="{{ book.title }}" class="bookImageIndex"></a> -->
+     </div>
+   </slick>
+ </div>
+
+<div class="bookIndex-description" ng-if="booksIndex.showBook">
+ <!-- {{ booksIndex.chosenBookOrUser }} -->
+ <h2>{{ booksIndex.chosenBook.title }} by {{ booksIndex.chosenBook.author}}</h2><br>
+ {{ booksIndex.chosenBook.entries[booksIndex.chosenBook.entries.length-1].name }} at {{ booksIndex.chosenBook.entries[booksIndex.chosenBook.entries.length-1].location }}<br>
+ <strong>{{ booksIndex.chosenBook.entries[booksIndex.chosenBook.entries.length-1].message }}</strong><br>
+ <a class="button" ui-sref="booksShow({ shortId: booksIndex.chosenBook.shortId })">Find out more about {{ booksIndex.chosenBook.title }}</a>
+</div>
+ <h1 ng-show="main.user">TOP USERS</h1>
+
+ <div class="book-index">
+   <slick slides-to-show="5" slides-to-scroll="3" init-onload="true"  data="booksIndex.users" class="slider multiple-items" dots="true" arrows="true" rows="2">
+     <div ng-repeat="user in booksIndex.users">
+       <span ng-click="booksIndex.showUserInfo(user)"><img ng-src="{{ user.img }}" alt="{{ user.username }}" class="bookImageIndex"></span>
+       <!-- <a ui-sref="usersShow({ id: user._id })" class="bookLinkIndex"><img ng-src="{{ user.img }}" alt="{{ user.username }}" class="bookImageIndex"></a> -->
+     </div>
+   </slick>
+ </div>
+ <div class="bookIndex-description" ng-if="booksIndex.showUser">
+   <h2>{{ booksIndex.chosenUser.username }}</h2><br>
+   <!-- {{ booksIndex.chosenBookOrUser.books }} -->
+   <!-- <p ng-repeat="book in booksIndex.chosenBookOrUser.books"> </p> -->
+   <a class="button" ui-sref="usersShow({ id: booksIndex.chosenBookOrUser._id })">Find out more about {{ booksIndex.chosenBookOrUser.username}}</a>
+
+</div>
+<!-- <div id="map"></div> -->

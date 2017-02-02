@@ -48,11 +48,17 @@ function BooksIndexCtrl(Book, User){
   // vm.map = new google.maps.Map(document.getElementById('map'), mapOptions);
   //
   // vm.markers = [];
-  vm.showDescription = showDescription;
-  vm.showInfo = false;
-  function showDescription(bookOrUser) {
-    vm.showInfo = true;
-    vm.chosenBookOrUser = bookOrUser;
+  vm.showBookInfo = showBookInfo;
+  vm.showUserInfo = showUserInfo;
+  vm.showBook = false;
+  vm.showUser = false;
+  function showBookInfo(book) {
+    vm.showBook = true;
+    vm.chosenBook = book;
+  }
+  function showUserInfo(user) {
+    vm.showUser = true;
+    vm.chosenUser = user;
   }
 
 }
