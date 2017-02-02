@@ -25,8 +25,8 @@ function BooksShowCtrl($stateParams, Book, $state, $http){
         const infoWindow = new google.maps.InfoWindow({
           content: `
           <h6>${vm.book.title}</h6>
-          <p>${entry.name}</p>
-          <p><em>Last entry by: </em>${entry.name} on ${new Date(entry.date).toDateString()}</p>
+          <img src="${ vm.book.image }">
+          <p><em>Last entry by: </em>${entry.name} ${(entry.date)? 'on ' + new Date(entry.date).toDateString() : ''}</p>
           `
         });
         if (infoWindows[0]) infoWindows[0].close();
