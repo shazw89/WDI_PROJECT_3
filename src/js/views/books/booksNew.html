@@ -18,7 +18,7 @@
     <input type="submit" value="Select" ng-show="books.bookChosen">
   </form>
   <div ng-show="books.showBook">
-    <img src="{{ books.book.image }}" alt="{{ books.book.title }}" ng-show="books.book.image">
+    <img class="book-thumbnail-new" src="{{ books.book.image }}" alt="{{ books.book.title }}" ng-show="books.book.image">
 
     <h1>{{ books.book.title }}</h1>
     <h4>{{ books.book.author }}</h4>

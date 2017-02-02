@@ -7,7 +7,7 @@ function BooksShowCtrl($stateParams, Book, $state, $http){
   const vm = this;
   const infoWindows = [];
   vm.found = $stateParams.found;
-
+  vm.created = $stateParams.created;
   Book
   .get({ shortId: $stateParams.shortId }).$promise
   .then((response) => {
