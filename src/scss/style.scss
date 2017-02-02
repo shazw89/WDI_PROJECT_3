@@ -105,8 +105,10 @@ main {
 }
 
 .book-image {
-  float:left;
-  max-width: 20%;
+  float: left;
+  margin-top: 60px;
+  text-align: center;
+  width: 25%;
 }
 
 .book-details {
@@ -114,7 +116,7 @@ main {
  max-width: 75%;
 }
 
-.book-journey {
+.book-journey, .book-show-form {
   clear: both;
 }
 
