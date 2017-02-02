@@ -21,12 +21,12 @@ function BooksNewCtrl(User, CurrentUserService, Book, $state, $http){
         vm.lng = response.data.results[0].geometry.location.lng;
         vm.book.entries = [];
         vm.book.entries.push({
-          name: vm.name,
+          name: CurrentUserService.currentUser.username,
           message: vm.message,
           location: vm.location,
           lat: vm.lat,
           lng: vm.lng,
-          date: Date.now()
+          time: Date.now()
         });
         Book
         .save(vm.book).$promise
