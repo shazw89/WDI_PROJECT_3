@@ -1,42 +1,31 @@
-<section class="user-details">
-  <div class="row">
-    <div class="twelve columns">
-      <img src="{{ usersShow.user.img }}">
-      <h2>Profile: {{ usersShow.user.username }}</h2>
-      <p>Email: <a href="mailto:{{ usersShow.user.email }}">{{ usersShow.user.email }}</a></p>
-      <p>{{ usersShow.user.bio }}</p>
-    </div>
-  </div>
-</section>
-<h2>Where are my books now?</h2>
-<section class="users-books">
-  <div class="row">
-    <div class="twelve columns">
-      <slick slides-to-show="3" slides-to-scroll="3" init-onload="true"  data="usersShow.user.books" class="slider multiple-items" dots="true" arrows="true" rows="2">
-        <div ng-repeat="book in usersShow.user.books">
-          <a ui-sref="booksShow({ shortId: book.shortId })" class="bookLinkIndex"><img ng-src="{{ book.image }}" alt="{{ book.title }}" class="bookImageIndex"></a>
-        </div>
-      </slick>
-    </div>
-  </div>
-  <div class="row">
-    <div class="twelve columns">
-      <div id="mapProfile">
+<div class="container">
+  <section class="user-details">
+    <div class="row">
+      <div class="twelve columns">
+        <img src="{{ usersShow.user.img }}" class="userThumbnail">
+        <p class="userProfileDetails"><strong>Username:</strong> {{ usersShow.user.username }}</p>
+        <p class="userProfileDetails"><strong>Books dropped:</strong> {{ usersShow.user.books.length }}</p>
+        <p class="userProfileDetails"><strong>Books found:</strong> {{ usersShow.user.books.length }}</p>
+        <p class="userProfileDetails"><strong>About me:</strong> {{ usersShow.user.bio }}</p>
       </div>
     </div>
-  </div>
-</section>
-
-
-<!-- <div class="user-book-content">
-<h5>{{ book.title }}, by {{ book.author }}</h5>
-<p>Short ID: {{ book.shortId }}</p>
-<ul>
-<li ng-repeat="entry in book.entries" class="users-comments">
-{{ entry.name }}: {{ entry.message }}
-</li>
-</ul>
-<a ui-sref="booksShow({ shortId: book.shortId })">
-<p>Comments ( {{ book.entries.length }} )</p>
-</a>
-</div> -->
+  </section>
+  <h2>Where are my books now?</h2>
+  <section class="users-books">
+    <div class="row">
+      <div class="twelve columns">
+        <slick slides-to-show="{{ usersShow.numberOfSlides }}" slides-to-scroll="3" init-onload="true"  data="usersShow.user.books" class="slider multiple-items" dots="true" arrows="true">
+          <div ng-repeat="book in usersShow.user.books">
+            <a ui-sref="booksShow({ shortId: book.shortId })" class="bookLinkIndex"><img ng-src="{{ book.image }}" alt="{{ book.title }}" class="bookImageIndex"></a>
+          </div>
+        </slick>
+      </div>
+    </div>
+    <div class="row">
+      <div class="twelve columns">
+        <div id="mapProfile">
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
