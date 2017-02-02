@@ -153,8 +153,8 @@ nav {
 .bar {
    @extend .b-a;
    position: fixed;
-   left: 12px;
-   top: 24px;
+   left: 20px;
+   top: 35px;
    &:before {
       @extend .b-a;
       top: -8px;
@@ -218,4 +218,11 @@ ul {
     max-height: 3em;
     text-align: left;
   }
+}
+
+
+h1, h2, h3, h4, h5 {
+  font-family: 'Anton', sans-serif;
+  text-align: center;
+  margin-top: 1em;
 }

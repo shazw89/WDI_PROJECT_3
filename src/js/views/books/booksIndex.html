@@ -1,21 +1,29 @@
-<h1>FREED BOOKS</h1>
+<div class="container">
+  <h1>FREED BOOKS</h1>
 
-<div class="book-index">
-  <slick slides-to-show="5" slides-to-scroll="3" init-onload="true"  data="booksIndex.books" class="slider multiple-items" dots="true" arrows="true" rows="2">
-    <div ng-repeat="book in booksIndex.books">
-      <a ui-sref="booksShow({ shortId: book.shortId })" class="bookLinkIndex"><img ng-src="{{ book.image }}" alt="{{ book.title }}" class="bookImageIndex"></a>
-    </div>
-  </slick>
+  <div class="book-index">
+    <slick slides-to-show="5" slides-to-scroll="3" init-onload="true"  data="booksIndex.books" class="slider multiple-items" dots="true" arrows="true" rows="2">
+      <div ng-repeat="book in booksIndex.books">
+        <span ng-click="booksIndex.showDescription(book)" class="bookLinkIndex"><img ng-src="{{ book.image }}" alt="{{ book.title }}" class="bookImageIndex"></span>
+        <!-- <a ui-sref="booksShow({ shortId: book.shortId })" class="bookLinkIndex"><img ng-src="{{ book.image }}" alt="{{ book.title }}" class="bookImageIndex"></a> -->
+      </div>
+    </slick>
+  </div>
+
+<div class="bookIndex-description" ng-if="booksIndex.showInfo">
+  <!-- {{ booksIndex.chosenBook }} -->
+  <h2>{{ booksIndex.chosenBook.title }} by {{ booksIndex.chosenBook.author}}</h2><br>
+  {{ booksIndex.chosenBook.entries[0].name }} at {{ booksIndex.chosenBook.entries[0].location }}<br>
+  <strong>{{ booksIndex.chosenBook.entries[0].message }}</strong>
 </div>
+  <h1 ng-show="main.user">TOP USERS</h1>
 
-
-<h1 ng-show="main.user">TOP USERS</h1>
-
-<div class="book-index">
-  <slick slides-to-show="5" slides-to-scroll="3" init-onload="true"  data="booksIndex.users" class="slider multiple-items" dots="true" arrows="true" rows="2">
-    <div ng-repeat="user in booksIndex.users">
-      <a ui-sref="usersShow({ id: user._id })" class="bookLinkIndex"><img ng-src="{{ user.img }}" alt="{{ user.username }}" class="bookImageIndex"></a>
-    </div>
-  </slick>
+  <div class="book-index">
+    <slick slides-to-show="5" slides-to-scroll="3" init-onload="true"  data="booksIndex.users" class="slider multiple-items" dots="true" arrows="true" rows="2">
+      <div ng-repeat="user in booksIndex.users">
+        <a ui-sref="usersShow({ id: user._id })" class="bookLinkIndex"><img ng-src="{{ user.img }}" alt="{{ user.username }}" class="bookImageIndex"></a>
+      </div>
+    </slick>
+  </div>
 </div>
 <!-- <div id="map"></div> -->

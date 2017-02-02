@@ -6,7 +6,7 @@ BooksIndexCtrl.$inject = ['Book', 'User'];
 function BooksIndexCtrl(Book, User){
   const vm = this;
   const infoWindows = [];
-  
+
   User.query().$promise
     .then(response => {
       vm.users = response;
@@ -48,7 +48,12 @@ function BooksIndexCtrl(Book, User){
   // vm.map = new google.maps.Map(document.getElementById('map'), mapOptions);
   //
   // vm.markers = [];
-
-
+  vm.showDescription = showDescription;
+  vm.showInfo = false;
+  function showDescription(book) {
+    console.log('clicked');
+    vm.showInfo = true;
+    vm.chosenBook = book;
+  }
 
 }
