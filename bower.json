@@ -21,7 +21,8 @@
     "angular-resource": "^1.5.9",
     "skeleton": "^2.0.4",
     "angular-bootstrap": "^2.5.0",
-    "angular-slick": "^0.2.1"
+    "angular-slick": "^0.2.1",
+    "animate.css": "^3.5.2"
   },
   "overrides": {
     "skeleton": {
