@@ -109,7 +109,7 @@ async.waterfall([
       }
     ], (err, books) => {
       if (err) return done(err);
-      console.log(`${books.length} were dropped by ${user.username}`);
+      console.log(`${books.length} books were dropped by ${user.username}`);
       return done(null);
     });
   },
@@ -149,11 +149,36 @@ async.waterfall([
       date: Date.now()
     }]}}}, { upsert: true, new: true }, (err, book) => {
       if (err) return done(err);
-      console.log(`${book.entries.length} were saved.`);
+      console.log(`${book.entries.length} were saved to ${book.title}`);
+      return done(null);
+    });
+  },
+  function addEntries1(done) {
+    Book.findOneAndUpdate({
+      title: 'The Rough Guide to London'
+    }, { $push: { entries: { $each: [{
+      name: 'James',
+      message: 'Really helped me find my way around London',
+      location: 'Bethnal Green',
+      lat: 51.5269736,
+      lng: -0.0667204,
+      date: Date.now()
+    },
+    {
+      name: 'Klaudia',
+      message: 'Also found this useful',
+      location: 'South Kensington',
+      lat: 51.4941501,
+      lng: -0.1746853,
+      date: Date.now()
+    }]}}}, { upsert: true, new: true }, (err, book) => {
+      if (err) return done(err);
+      console.log(`${book.entries.length} were saved to ${book.title}.`);
       return done(null);
     });
   }
-], function finish(err) {
+],
+function finish(err) {
   if (err) {
     console.log('Error', err);
     return process.exit();
