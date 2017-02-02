@@ -7,6 +7,7 @@ const userSchema = new mongoose.Schema({
   email: { type: String, unique: true, trim: true, required: true },
   passwordHash: { type: String, required: true },
   img: { type: String },
+  bio: { type: String, trim: true },
   books: [{ type: mongoose.Schema.ObjectId, ref: 'Book' }]
 });
 
