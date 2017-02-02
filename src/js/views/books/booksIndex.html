@@ -28,8 +28,8 @@
    </slick>
  </div>
  <div class="bookIndex-description" ng-if="booksIndex.showUser">
-   <h2>{{ booksIndex.chosenUser.username }}</h2><br>
-   <!-- {{ booksIndex.chosenBookOrUser.books }} -->
+   <h2>{{ booksIndex.chosenUser.username }}</h2>
+   <p>{{ booksIndex.chosenUser.bio }}</p>
    <!-- <p ng-repeat="book in booksIndex.chosenBookOrUser.books"> </p> -->
    <a class="button" ui-sref="usersShow({ id: booksIndex.chosenUser._id })">Find out more about {{ booksIndex.chosenUser.username}}</a>
 
