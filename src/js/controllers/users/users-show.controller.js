@@ -26,7 +26,8 @@ function UsersShowCtrl(User, $stateParams, Book){
             const infoWindow = new google.maps.InfoWindow({
               content: `
               <h6 class="infoWindowText"><strong>${book.title}</strong></h6>
-              <p class="infoWindowText"><em>Last entry by ${lastEntry.name} on ${new Date(lastEntry.date).toDateString()}: </em><br> ${lastEntry.message}</p>
+              <img src="${ book.image }">
+              <p class="infoWindowText"><em>Last entry by ${lastEntry.name} ${(lastEntry.date)? 'on ' + new Date(lastEntry.date).toDateString() : ''}: </em><br> ${lastEntry.message}</p>
               `
             });
             if (infoWindows[0]) infoWindows[0].close();
