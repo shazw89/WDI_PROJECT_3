@@ -346,6 +346,17 @@ h1, h2, h3, h4, h5 {
   }
 }
 
+div.button {
+  float: right;
+  background-color: #CF4646;
+  color: white;
+  a#logout {
+    color: black;
+    font-family: 'Anton', sans-serif;
+    font-size: 1.2em;
+  }
+}
+
 .book-thumbnail-new {
   display: block;
   margin: 0 auto;
