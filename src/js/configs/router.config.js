@@ -52,7 +52,7 @@ function Router($stateProvider, $locationProvider, $urlRouterProvider){
   })
   .state('booksIndex', {
     url: '/books',
-    templateUrl: '/js/views/books/booksIndexNew.html',
+    templateUrl: '/js/views/books/booksIndex.html',
     controller: 'BooksIndexCtrl',
     controllerAs: 'booksIndex'
   })
