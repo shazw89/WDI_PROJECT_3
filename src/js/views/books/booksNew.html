@@ -18,7 +18,7 @@
     ng-model="books.asyncSelected"
     uib-typeahead="book.title + ' (' + book.author + ')' for book in books.searchGoogle($viewValue)"
     typeahead-wait-ms="500"
-    typeahead-on-select="books.chooseBook($item, $model, $label)"
+    typeahead-on-select="books.chooseBook($item)"
     placeholder="Search for a book"
     autocomplete="off">
     <input type="submit" value="Select" ng-show="books.bookChosen">
