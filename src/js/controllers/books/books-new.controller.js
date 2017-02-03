@@ -40,16 +40,16 @@ function BooksNewCtrl(User, CurrentUserService, Book, $state, $http){
   }
 
   function chooseBook($item){
-    const randomAlicea = alicea[Math.floor(Math.random()*alicea.length)];
+    const randomAlicia = alicia[Math.floor(Math.random()*alicia.length)];
     vm.bookChosen = true;
     vm.book = $item;
   }
 
-  const alicea = ['AIzaSyBGIar1-BqChkNiJtRCpfftuSdR5j8kHd4','AIzaSyDX2sqMuT_3IultHEzBNB6pfWT_TnYS5xs'];
+  const alicia = ['AIzaSyBGIar1-BqChkNiJtRCpfftuSdR5j8kHd4','AIzaSyDX2sqMuT_3IultHEzBNB6pfWT_TnYS5xs'];
 
   function searchGoogle(val) {
-    const randomAlicea = alicea[Math.floor(Math.random()*alicea.length)];
-    return $http.get(`https://www.googleapis.com/books/v1/volumes?q=${val}&key=${randomAlicea}&fields=items`).then(function(response){
+    const randomAlicia = alicia[Math.floor(Math.random()*alicia.length)];
+    return $http.get(`https://www.googleapis.com/books/v1/volumes?q=${val}&key=${randomAlicia}&fields=items`).then(function(response){
       return response.data.items.filter(function(item) {
         return (item.volumeInfo.authors && item.volumeInfo.title && item.volumeInfo.imageLinks);
       }).map(function(item) {
