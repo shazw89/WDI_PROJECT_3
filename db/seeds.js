@@ -18,8 +18,8 @@ async.waterfall([
       email: 'henry@henry.com',
       password: 'password',
       passwordConfirmation: 'password',
-      img: 'https://www.fillmurray.com/g/200/200',
-      bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+      img: 'images/henry.jpg',
+      bio: 'A warrior in every sense of the word. Henry had never seen a book upright until that horrible Thursday, when a bookshelf was installed in his room. The sight so distressed him that he spent most of his teenage years in mute rebellion. He hasn’t quite recovered from this trauma, but he’s certainly put it to constructive use. Or was it destructive use?'
     },{
       username: 'Sharon',
       email: 'sharon@sharon.com',
@@ -402,6 +402,14 @@ async.waterfall([
       lat: 51.55170589999999,
       lng: -0.1588255,
       date: Date.now()
+    },
+    {
+      name: 'Sharon',
+      message: 'I\'m warm, but my dog is now bald',
+      location: 'Bermondsey',
+      lat: 51.49858210000001,
+      lng: -0.0691276,
+      date: Date.now()
     }]}}}, { upsert: true, new: true }, (err, book) => {
       if (err) return done(err);
       console.log(`${book.entries.length} were saved to ${book.title}.`);
@@ -413,18 +421,18 @@ async.waterfall([
       title: 'A Passage to India'
     }, { $push: { entries: { $each: [{
       name: 'Henry',
-      message: '',
+      message: 'Enraging, but enlightening. A must for the Freedom Fighter',
       location: 'Hampstead Heath',
-      lat: '',
-      lng: '',
+      lat: '51.5608421',
+      lng: '-0.1631376',
       date: Date.now()
     },
     {
-      name: '',
-      message: '',
-      location: '',
-      lat: '',
-      lng: '',
+      name: 'Sharon',
+      message: 'This book gives me a reason to fight',
+      location: 'Old Street',
+      lat: '51.5263219',
+      lng: '-0.08429819999999999',
       date: Date.now()
     }]}}}, { upsert: true, new: true }, (err, book) => {
       if (err) return done(err);
@@ -437,18 +445,26 @@ async.waterfall([
       title: 'The Great Gatsby'
     }, { $push: { entries: { $each: [{
       name: 'Henry',
-      message: '',
-      location: '',
-      lat: '',
-      lng: '',
+      message: 'For when I put down my weapons and pick up a Scotch',
+      location: 'Fitzrovia',
+      lat: '51.5214993',
+      lng: '-0.1365872',
       date: Date.now()
     },
     {
-      name: '',
-      message: '',
-      location: '',
-      lat: '',
-      lng: '',
+      name: 'Klaudia',
+      message: 'Decadence is beautiful, even when it\'s meaningless',
+      location: 'Notting Hill',
+      lat: 51.5110287,
+      lng: -0.205389,
+      date: Date.now()
+    },
+    {
+      name: 'James',
+      message: 'To live, to love, to let go! Ah, life.',
+      location: 'Bloomsbury',
+      lat: 51.5218962,
+      lng: -0.1279597,
       date: Date.now()
     }]}}}, { upsert: true, new: true }, (err, book) => {
       if (err) return done(err);
@@ -461,18 +477,26 @@ async.waterfall([
       title: 'Lord of the Flies'
     }, { $push: { entries: { $each: [{
       name: 'Henry',
-      message: '',
-      location: '',
-      lat: '',
-      lng: '',
+      message: 'Reminds me of when I was a boy',
+      location: 'Shepherd\'s Bush',
+      lat: 51.5052027,
+      lng: -0.2244752,
       date: Date.now()
     },
     {
-      name: '',
-      message: '',
-      location: '',
-      lat: '',
-      lng: '',
+      name: 'Sharon',
+      message: 'Brb, dealing with traumatic childhood memories',
+      location: 'South Kensington',
+      lat: 51.4941501,
+      lng: -0.1746853,
+      date: Date.now()
+    },
+    {
+      name: 'Klaudia',
+      message: 'What are all of you whining about? I\'ve read worse',
+      location: 'Queen\'s Park',
+      lat: 52.254496,
+      lng: -0.8986409999999999,
       date: Date.now()
     }]}}}, { upsert: true, new: true }, (err, book) => {
       if (err) return done(err);
@@ -485,18 +509,18 @@ async.waterfall([
       title: '2666'
     }, { $push: { entries: { $each: [{
       name: 'Henry',
-      message: '',
-      location: '',
-      lat: '',
-      lng: '',
+      message: 'Sharon didn\'t like it. I beg to differ',
+      location: 'Mornington Crescent',
+      lat: 51.5343884,
+      lng: -0.1388607,
       date: Date.now()
     },
     {
-      name: '',
-      message: '',
-      location: '',
-      lat: '',
-      lng: '',
+      name: 'James',
+      message: 'A bit pretentious, but I dig it',
+      location: 'Oxford Circus',
+      lat: 51.74858560000001,
+      lng: -1.2419223,
       date: Date.now()
     }]}}}, { upsert: true, new: true }, (err, book) => {
       if (err) return done(err);
@@ -508,18 +532,18 @@ async.waterfall([
       title: 'The Wind-Up Bird Chronicle'
     }, { $push: { entries: { $each: [{
       name: 'Henry',
-      message: '',
-      location: '',
-      lat: '',
-      lng: '',
+      message: 'I had a dream like this once...',
+      location: 'Hammersmith',
+      lat: 51.4911875,
+      lng: -0.2237315,
       date: Date.now()
     },
     {
-      name: '',
-      message: '',
-      location: '',
-      lat: '',
-      lng: '',
+      name: 'James',
+      message: 'Surreal. Totes radical',
+      location: 'Bethnal Green',
+      lat: 51.5269736,
+      lng: -0.0667204,
       date: Date.now()
     }]}}}, { upsert: true, new: true }, (err, book) => {
       if (err) return done(err);
