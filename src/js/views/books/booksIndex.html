@@ -4,10 +4,10 @@
     <slick slides-to-show="4" slides-to-scroll="1" init-onload="true"  data="booksIndex.books" class="slider multiple-items" dots="true" arrows="true" rows="3" autoplay="true">
       <div ng-repeat="book in booksIndex.books | limitTo: -12 | orderBy: '-'" class="feedBox">
         <img src="images/bookIcon.png" class="bookIcon">
-        <p>
+        <h6>
           <a ui-sref="usersShow({ id: book.user._id })">{{book.user.username}}</a> freed <a ui-sref="booksShow({ shortId: book.shortId })">{{book.title}}</a>
           <span ng-if="book.entries[0].location">at {{book.entries[0].location}}</span>
-        </p>
+        </h6>
       </div>
     </slick>
   </div>
