@@ -43,6 +43,17 @@ ul li {
 .book-index {
   margin: 0 auto;
 }
+//I FOUND A BOOK
+
+.redBook {
+  text-align: center;
+}
+
+//BOOK SHOW
+.shackles {
+  text-align: center;
+}
+
 /// USER SHOW PAGE
 .userThumbnail {
   margin: 5px;
@@ -186,6 +197,17 @@ nav {
     margin: 0;
   }
 }
+
+.icon {
+  display: inline-block;
+  padding: 15px;
+}
+.fist {
+  // background-image: url('');
+  // background-repeat: no-repeat;
+  // min-height: 200px;
+
+}
 .b-a {
    transition: all .25s;
    content: "";
@@ -294,7 +316,7 @@ h1, h2, h3, h4, h5 {
   text-align: center;
 }
 .quoteAuthor {
-  text-align: right;
+  text-align: center;
 }
 .manifesto {
   max-width: 700px;
