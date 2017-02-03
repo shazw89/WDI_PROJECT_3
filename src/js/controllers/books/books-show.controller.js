@@ -27,11 +27,8 @@ function BooksShowCtrl($stateParams, Book, $state, $http, TokenService){
       google.maps.event.addListener(marker, 'click', () => {
         const infoWindow = new google.maps.InfoWindow({
           content: `
-          <h6><strong>${vm.book.title}</strong></h6>
-          <p>
-          <img src="${ vm.book.image }">
-          </p>
-          <p><em>Found by: </em>${entry.name} ${(entry.date)? 'on ' + new Date(entry.date).toDateString() : ''}</p>
+          <h6 class="infoWindowText"><strong>${vm.book.title}</strong></h6>
+          <p class="infoWindowText"><em>Found by: ${entry.name} ${(entry.date)? 'on ' + new Date(entry.date).toDateString() : ''}</em></p>
           `
         });
         if (infoWindows[0]) infoWindows[0].close();

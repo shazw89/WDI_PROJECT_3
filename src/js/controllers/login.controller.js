@@ -12,9 +12,8 @@ function LoginCtrl(User, CurrentUserService, $state) {
     .then(data => {
       CurrentUserService.getUser();
       $state.go('booksIndex');
-
     }, err => {
-      console.log(err);
+      vm.message = 'Invalid password or user e-mail. Try again.';
     });
   };
 
