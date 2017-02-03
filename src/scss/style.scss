@@ -2,6 +2,11 @@ body {
   background: #F7F7F7;
   margin-bottom: 0px;
 }
+
+a {
+  color: #000;
+}
+
 #mapProfile {
   border: 1px solid #dddddd;
 }
@@ -43,6 +48,10 @@ main {
 .book-index {
   margin: 0 auto;
 }
+.agitprop {
+  text-align: center;
+}
+
 /// USER SHOW PAGE
 .userThumbnail {
   margin: 5px;
@@ -169,6 +178,7 @@ div.test {
   vertical-align: top;
   img {
     width: 100%;
+    height: 250px;
   }
   @media screen and (min-width: 600px) {
     width: 19%;
@@ -198,6 +208,17 @@ nav {
   p {
     margin: 0;
   }
+}
+
+.icon {
+  display: inline-block;
+  padding: 15px;
+}
+.fist {
+  // background-image: url('');
+  // background-repeat: no-repeat;
+  // min-height: 200px;
+
 }
 .b-a {
   transition: all .25s;
@@ -307,7 +328,7 @@ h1, h2, h3, h4, h5 {
   text-align: center;
 }
 .quoteAuthor {
-  text-align: right;
+  text-align: center;
 }
 .manifesto {
   max-width: 700px;
@@ -322,6 +343,7 @@ h1, h2, h3, h4, h5 {
   }
 }
 
+
 li.button {
 
   float: right;
@@ -333,6 +355,20 @@ li.button {
     font-size: 1.2em;
 
   }
+}
 
+
+
+.book-thumbnail-new {
+  display: block;
+  margin: 0 auto;
+}
+
+
+.shortId {
+  background-color: black;
+  color: white;
+  padding: .5em;
+  margin-bottom: 1em;
 
 }

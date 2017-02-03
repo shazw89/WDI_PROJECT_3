@@ -1,7 +1,11 @@
 <div class="container">
 
   <h2>Free A Book</h2>
-
+  <div class="agitprop">
+    <img src="https://s-media-cache-ak0.pinimg.com/736x/bb/96/8d/bb968ddb54a0fa7caca7af4a5edae727.jpg" alt="">
+  </div>
+<p>Our calling is to liberate. Set the books you love free by leaving them anywhere: parks, the Tube, the Tate, the Thames. Abandon them to live with abandon, free of the fascist influence of the bookshelf. And be sure to begin your book’s story with a telling comment.
+</p>
   <form ng-submit="books.selectBook()" ng-hide="books.showBook">
         <label for="book-detail">Enter a title, author, or ISBN</label>
         <input
@@ -18,7 +22,7 @@
     <input type="submit" value="Select" ng-show="books.bookChosen">
   </form>
   <div ng-show="books.showBook">
-    <img src="{{ books.book.image }}" alt="{{ books.book.title }}" ng-show="books.book.image">
+    <img class="book-thumbnail-new" src="{{ books.book.image }}" alt="{{ books.book.title }}" ng-show="books.book.image">
 
     <h1>{{ books.book.title }}</h1>
     <h4>{{ books.book.author }}</h4>
@@ -38,4 +42,5 @@
       <input class="button" type="submit" value="Add story">
     </form>
   </div>
+
 </div>

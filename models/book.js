@@ -8,6 +8,7 @@ const bookSchema = mongoose.Schema({
   image: { type: String, trim: true },
   description: { type: String, trim: true },
   googleId: { type: String, trim: true },
+  index: { type: Number },
   user: { type: mongoose.Schema.ObjectId, ref: 'User' },
   entries: [{
     name: { type: String, trim: true, default: 'anonymous' },

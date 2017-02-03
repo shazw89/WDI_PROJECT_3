@@ -9,6 +9,12 @@ function BooksIndexCtrl(Book, User){
   vm.showButton;
   vm.increment = 10;
   vm.limit = vm.increment;
+  function sortByKey(array, key) {
+    return array.sort(function(a, b) {
+      var x = a[key]; var y = b[key];
+      return ((x < y) ? 1 : ((x > y) ? -1 : 0));
+    });
+  }
 
   vm.increaseLimit = () => {
     vm.limit += vm.increment;
@@ -22,8 +28,8 @@ function BooksIndexCtrl(Book, User){
 
   Book.query().$promise
   .then(response => {
-    console.log(response);
-    vm.books = response;
+    vm.books = sortByKey(response,'index');
+    console.log(vm.books);
     vm.showButton = vm.limit <= vm.books.length;
   });
 

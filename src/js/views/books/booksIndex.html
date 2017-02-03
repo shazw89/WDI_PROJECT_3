@@ -1,37 +1,20 @@
-<div class="container">
- <h1>FREED BOOKS</h1>
+<div class="container index">
+  <h3>Freedom Feed</h3>
+  <div class="book-index">
+    <slick slides-to-show="4" slides-to-scroll="1" init-onload="true"  data="booksIndex.books" class="slider multiple-items" dots="true" arrows="true" rows="3" autoplay="true">
+      <div ng-repeat="book in booksIndex.books | limitTo: -12 | orderBy: '-'" class="feedBox">
+        <img src="images/bookIcon.png" class="bookIcon">
+        <p>
+          <a ui-sref="usersShow({ id: book.user._id })">{{book.user.username}}</a> freed <a ui-sref="booksShow({ shortId: book.shortId })">{{book.title}}</a>
+          <span ng-if="book.entries[0].location">at {{book.entries[0].location}}</span>
+        </p>
+      </div>
+    </slick>
+  </div>
 
- <div class="book-index">
-   <slick slides-to-show="5" slides-to-scroll="3" init-onload="true"  data="booksIndex.books" class="slider multiple-items" dots="true" arrows="true" rows="2">
-     <div ng-repeat="book in booksIndex.books">
-       <span ng-click="booksIndex.showBookInfo(book)" class="bookLinkIndex "><img ng-src="{{ book.image }}" alt="{{ book.title }}" class="bookImageIndex" ng-class="{animated: hover, pulse: hover}" ng-mouseenter="hover = true" ng-mouseleave="hover = false"></span>
-       <!-- <a ui-sref="booksShow({ shortId: book.shortId })" class="bookLinkIndex"><img ng-src="{{ book.image }}" alt="{{ book.title }}" class="bookImageIndex"></a> -->
-     </div>
-   </slick>
- </div>
 
-<div class="bookIndex-description" ng-if="booksIndex.showBook">
- <!-- {{ booksIndex.chosenBookOrUser }} -->
- <h2>{{ booksIndex.chosenBook.title }} by {{ booksIndex.chosenBook.author}}</h2><br>
- {{ booksIndex.chosenBook.entries[booksIndex.chosenBook.entries.length-1].name }} at {{ booksIndex.chosenBook.entries[booksIndex.chosenBook.entries.length-1].location }}<br>
- <strong>{{ booksIndex.chosenBook.entries[booksIndex.chosenBook.entries.length-1].message }}</strong><br>
- <a class="button" ui-sref="booksShow({ shortId: booksIndex.chosenBook.shortId })">Find out more about {{ booksIndex.chosenBook.title }}</a>
+  <div class="test" ng-repeat="book in booksIndex.books | limitTo: booksIndex.limit">
+    <img src="{{ book.image }}" alt="" class="" ui-sref="booksShow({ shortId: book.shortId })">
+  </div>
+  <h4 ng-if="booksIndex.showButton" class="loader" ng-click="booksIndex.increaseLimit()">Load {{ booksIndex.increment }} more</h4>
 </div>
- <h1 ng-show="main.user">TOP USERS</h1>
-
- <div class="book-index">
-   <slick slides-to-show="5" slides-to-scroll="3" init-onload="true"  data="booksIndex.users" class="slider multiple-items" dots="true" arrows="true">
-     <div ng-repeat="user in booksIndex.users">
-       <span ng-click="booksIndex.showUserInfo(user)"><img ng-src="{{ user.img }}" alt="{{ user.username }}" class="bookImageIndex" ng-class="{animated: hover, pulse: hover}" ng-mouseenter="hover = true" ng-mouseleave="hover = false"></span>
-       <!-- <a ui-sref="usersShow({ id: user._id })" class="bookLinkIndex"><img ng-src="{{ user.img }}" alt="{{ user.username }}" class="bookImageIndex"></a> -->
-     </div>
-   </slick>
- </div>
- <div class="bookIndex-description" ng-if="booksIndex.showUser">
-   <h2>{{ booksIndex.chosenUser.username }}</h2>
-   <p>{{ booksIndex.chosenUser.bio }}</p>
-   <!-- <p ng-repeat="book in booksIndex.chosenBookOrUser.books"> </p> -->
-   <a class="button" ui-sref="usersShow({ id: booksIndex.chosenUser._id })">Find out more about {{ booksIndex.chosenUser.username}}</a>
-
-</div>
-<!-- <div id="map"></div> -->

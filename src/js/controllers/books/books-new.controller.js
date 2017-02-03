@@ -16,12 +16,11 @@ function BooksNewCtrl(User, CurrentUserService, Book, $state, $http){
     $http
       .get(`https://maps.googleapis.com/maps/api/geocode/json?address=${vm.location}&components=administrative_area:England&key=AIzaSyAzPfoyVbxG2oz378kpMkMszn2XtZn-1SU`)
       .then(function(response) {
-        console.log(response);
         vm.lat = response.data.results[0].geometry.location.lat;
         vm.lng = response.data.results[0].geometry.location.lng;
         vm.book.entries = [];
         vm.book.entries.push({
-          name: vm.name,
+          name: CurrentUserService.currentUser.username,
           message: vm.message,
           location: vm.location,
           lat: vm.lat,
@@ -30,8 +29,9 @@ function BooksNewCtrl(User, CurrentUserService, Book, $state, $http){
         });
         Book
         .save(vm.book).$promise
-        .then(() => {
-          $state.go('booksIndex');
+        .then((response) => {
+          console.log(response.shortId);
+          $state.go('booksShow', { shortId: response.shortId , created: true});
         });
       });
   }
@@ -52,7 +52,6 @@ function BooksNewCtrl(User, CurrentUserService, Book, $state, $http){
     const randomAlicea = alicea[Math.floor(Math.random()*alicea.length)];
     return $http.get(`https://www.googleapis.com/books/v1/volumes?q=${val}&key=${randomAlicea}&fields=items`).then(function(response){
       return response.data.items.filter(function(item) {
-        console.log(item);
         return (item.volumeInfo.authors && item.volumeInfo.title && item.volumeInfo.imageLinks);
       }).map(function(item) {
         return {
