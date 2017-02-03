@@ -2,17 +2,20 @@ angular
 .module('angularAuthentication')
 .controller('BooksShowCtrl', BooksShowCtrl);
 
-BooksShowCtrl.$inject = ['$stateParams', 'Book', '$state', '$http'];
-function BooksShowCtrl($stateParams, Book, $state, $http){
+BooksShowCtrl.$inject = ['$stateParams', 'Book', '$state', '$http', 'TokenService'];
+function BooksShowCtrl($stateParams, Book, $state, $http, TokenService){
   const vm = this;
   const infoWindows = [];
   vm.found = $stateParams.found;
   vm.created = $stateParams.created;
+  console.log(TokenService.decodeToken().id);
+
   Book
   .get({ shortId: $stateParams.shortId }).$promise
   .then((response) => {
     vm.book = response;
     console.log('Data being received: ', vm.book);
+    vm.shortId = TokenService.decodeToken().id === vm.book.user ? vm.book.shortId : false;
     // for (const book of vm.books) {
     for (const entry of vm.book.entries) {
       const latlng = new google.maps.LatLng(entry.lat, entry.lng);
