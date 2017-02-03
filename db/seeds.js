@@ -380,7 +380,150 @@ async.waterfall([
       date: Date.now()
     }]}}}, { upsert: true, new: true }, (err, book) => {
       if (err) return done(err);
+      console.log(`${book.entries.length} were saved to ${book.title}`);
+      return done(null);
+    });
+  },
+  function addEntries2(done) {
+    Book.findOneAndUpdate({
+      title: 'Knitting With Dog Hair'
+    }, { $push: { entries: { $each: [{
+      name: 'Klaudia',
+      message: 'Now both me and my dog look fantastic!',
+      location: 'Hammersmith',
+      lat: 51.4911875,
+      lng: -0.2237315,
+      date: Date.now()
+    },
+    {
+      name: 'James',
+      message: 'All of my dog jumpers came out terribly before reading this book. Thank you so much Klaudia.',
+      location: 'Camden',
+      lat: 51.55170589999999,
+      lng: -0.1588255,
+      date: Date.now()
+    }]}}}, { upsert: true, new: true }, (err, book) => {
+      if (err) return done(err);
       console.log(`${book.entries.length} were saved to ${book.title}.`);
+      return done(null);
+    });
+  },
+  function addEntries3(done) {
+    Book.findOneAndUpdate({
+      title: 'A Passage to India'
+    }, { $push: { entries: { $each: [{
+      name: 'Henry',
+      message: '',
+      location: 'Hampstead Heath',
+      lat: '',
+      lng: '',
+      date: Date.now()
+    },
+    {
+      name: '',
+      message: '',
+      location: '',
+      lat: '',
+      lng: '',
+      date: Date.now()
+    }]}}}, { upsert: true, new: true }, (err, book) => {
+      if (err) return done(err);
+      console.log(`${book.entries.length} were saved to ${book.title}`);
+      return done(null);
+    });
+  },
+  function addEntries4(done) {
+    Book.findOneAndUpdate({
+      title: 'The Great Gatsby'
+    }, { $push: { entries: { $each: [{
+      name: 'Henry',
+      message: '',
+      location: '',
+      lat: '',
+      lng: '',
+      date: Date.now()
+    },
+    {
+      name: '',
+      message: '',
+      location: '',
+      lat: '',
+      lng: '',
+      date: Date.now()
+    }]}}}, { upsert: true, new: true }, (err, book) => {
+      if (err) return done(err);
+      console.log(`${book.entries.length} were saved to ${book.title}`);
+      return done(null);
+    });
+  },
+  function addEntries5(done) {
+    Book.findOneAndUpdate({
+      title: 'Lord of the Flies'
+    }, { $push: { entries: { $each: [{
+      name: 'Henry',
+      message: '',
+      location: '',
+      lat: '',
+      lng: '',
+      date: Date.now()
+    },
+    {
+      name: '',
+      message: '',
+      location: '',
+      lat: '',
+      lng: '',
+      date: Date.now()
+    }]}}}, { upsert: true, new: true }, (err, book) => {
+      if (err) return done(err);
+      console.log(`${book.entries.length} were saved to ${book.title}`);
+      return done(null);
+    });
+  },
+  function addEntries6(done) {
+    Book.findOneAndUpdate({
+      title: '2666'
+    }, { $push: { entries: { $each: [{
+      name: 'Henry',
+      message: '',
+      location: '',
+      lat: '',
+      lng: '',
+      date: Date.now()
+    },
+    {
+      name: '',
+      message: '',
+      location: '',
+      lat: '',
+      lng: '',
+      date: Date.now()
+    }]}}}, { upsert: true, new: true }, (err, book) => {
+      if (err) return done(err);
+      console.log(`${book.entries.length} were saved to ${book.title}`);
+      return done(null);
+    });
+  }, function addEntries7(done) {
+    Book.findOneAndUpdate({
+      title: 'The Wind-Up Bird Chronicle'
+    }, { $push: { entries: { $each: [{
+      name: 'Henry',
+      message: '',
+      location: '',
+      lat: '',
+      lng: '',
+      date: Date.now()
+    },
+    {
+      name: '',
+      message: '',
+      location: '',
+      lat: '',
+      lng: '',
+      date: Date.now()
+    }]}}}, { upsert: true, new: true }, (err, book) => {
+      if (err) return done(err);
+      console.log(`${book.entries.length} were saved to ${book.title}`);
       return done(null);
     });
   }
