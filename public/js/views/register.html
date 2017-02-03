@@ -1,0 +1,43 @@
+<div class="container">
+  <h1>Register</h1>
+  <div class="agitprop">
+    <img src="http://all-that-is-interesting.com/wordpress/wp-content/uploads/2012/01/soviet.jpg" alt="">
+  </div>
+<p> Give us a name. Give us a face to the name. Give us an email where we can reach the name. And give us some credit card details where… never mind, just give us a name. </p>
+  <form ng-submit="register.register()">
+    <div class="row">
+      <div class="twelve columns">
+        <label for="UserameInput">Username</label>
+        <input class="u-full-width" id="UserameInput" type="text" name="UsernameInput" ng-model="register.user.username" placeholder="Username">
+      </div>
+      </div>
+
+      <div class="twelve columns">
+        <label for="FirstNameInput">First name</label>
+        <input class="u-full-width" id="FirstNameInput" type="text" name="FirstNameInput" ng-model="register.user.firstName" placeholder="First name">
+      </div>
+
+      <div class="twelve columns">
+        <label for="LastNameInput">Last name</label>
+        <input class="u-full-width" id="LastNameInput" type="text" name="LastNameInput" ng-model="register.user.lastName" placeholder="Last name">
+      </div>
+
+      <div class="twelve columns">
+        <label for="EmailInput">Your email</label>
+        <input class="u-full-width" id="EmailInput" type="email" name="email" ng-model="register.user.email" placeholder="Email">
+      </div>
+
+      <div class="twelve columns">
+        <label for="PasswordInputRegister">Password</label>
+        <input class="u-full-width" id="PasswordInputRegister" type="password" name="email" ng-model="register.user.password" placeholder="Password">
+      </div>
+
+        <div class="twelve columns">
+          <div class="u-full-width">
+            <label for="PasswordConfirmation">Password Confirmation</label>
+            <input id="PasswordConfirmation" class="u-full-width" type="password" name="password" ng-model="register.user.passwordConfirmation" placeholder="Password confirmation">
+          </div>
+        </div>
+    <input type="submit" value="Register">
+  </form>
+</div>

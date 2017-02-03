@@ -1,0 +1,40 @@
+
+<div class="container">
+
+  <section class="user-details">
+
+    <div class="row">
+      <div class="twelve columns">
+        <img src="{{ usersShow.user.img }}" class="userThumbnail">
+        <div class="button" ng-show="main.user">
+          <a ng-click="main.logout()" id="logout">Logout</a>
+        </div>
+        <p class="userProfileDetails"><strong>Username:</strong> {{ usersShow.user.username }}</p>
+
+        <p class="userProfileDetails"><strong>Books dropped:</strong> {{ usersShow.user.books.length }}</p>
+
+        <p class="userProfileDetails"><strong>Last book dropped: </strong> {{ usersShow.user.books[usersShow.user.books.length-1].title }}</p>
+        <p class="userProfileDetails"><strong>About me:</strong> {{ usersShow.user.bio }}</p>
+      </div>
+
+    </div>
+  </section>
+  <h4>Where are my books now?</h4>
+  <section class="users-books">
+    <div class="row">
+      <div class="twelve columns">
+        <slick slides-to-show="{{ usersShow.numberOfSlides }}" slides-to-scroll="3" init-onload="true"  data="usersShow.user.books" class="slider multiple-items" dots="true" arrows="true">
+          <div ng-repeat="book in usersShow.user.books">
+            <a ui-sref="booksShow({ shortId: book.shortId })" class="bookLinkIndex"><img ng-src="{{ book.image }}" alt="{{ book.title }}" class="bookImageIndex"></a>
+          </div>
+        </slick>
+      </div>
+    </div>
+    <div class="row">
+      <div class="twelve columns">
+        <div id="mapProfile">
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

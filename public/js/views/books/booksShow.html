@@ -1,0 +1,46 @@
+<div class="container">
+  <h2 ng-if="BooksShow.shortId" class="shortId">The unique code for this book is: {{ BooksShow.book.shortId }}</h2>
+  <div class="book-wrapper">
+    <div class="book-image">
+      <img src="{{ BooksShow.book.image }}" alt="{{ BooksShow.book.title }}">
+    </div>
+    <div class="book-details">
+      <h1 class="book-header">{{ BooksShow.book.title }}</h1>
+      <h4 class="book-header">{{ BooksShow.book.author }}</h4>
+    </div>
+  </div>
+  <div class="book-description">
+    <p>{{ BooksShow.book.description }}</p>
+  </div>
+
+<!-- ========================= -->
+  <div ng-show="BooksShow.found" class="book-show-form">
+    <h4>Found the book? Tell us how!</h4>
+    <form ng-submit="BooksShow.updateEntries()">
+      <div class="row">
+        <div class="six columns">
+          <label for="usernameInput">Name</label>
+          <input class="u-full-width" type="text" placeholder="Name" id="usernameInput" ng-model="BooksShow.entry.name">
+        </div>
+        <div class="six columns">
+          <label for="locationInput">Location*</label>
+          <input class="u-full-width" type="text" placeholder="Location" id="locationInput" ng-model="BooksShow.entry.location" required>
+        </div>
+      </div>
+      <label for="messageInput" ng-model="BooksShow.book.newEntry.message">Message*</label>
+      <textarea class="u-full-width" placeholder="The story goes like this..." id="messageInput" ng-model="BooksShow.entry.message" required></textarea>
+      <input class="button" type="submit" value="Add story">
+    </form>
+  </div>
+  <!-- ========================= -->
+  <div class="book-journey">
+    <h4 class="book-header">The journey so far....</h4>
+    <p ng-repeat="entry in BooksShow.book.entries">
+      <strong>{{ entry.name }} </strong> - {{ entry.location }}<br>
+      <q class="comment-indent">{{ entry.message }}</q>
+      <br>
+      <span ng-show="entry.date"><strong>Last seen:</strong> {{ entry.date | date:'dd/MM/yyyy HH:mm'}}</span>
+    </p>
+  </div>
+  <div id="map"></div>
+</div>

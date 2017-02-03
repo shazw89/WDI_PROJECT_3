@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html ng-app="angularAuthentication" lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FREE THE BOOKS</title>
+  <base href="/" />
+  <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
+  <!-- <link href="https://fonts.googleapis.com/css?family=Slabo+27px" rel="stylesheet"> -->
+  <link href="https://fonts.googleapis.com/css?family=Raleway:400,500,700" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" rel="stylesheet">
+  <!-- inject:js -->
+  <script src="/js/app.js"></script>
+  <!-- endinject -->
+  <!-- inject:css -->
+  <link rel="stylesheet" href="/css/style.css">
+  <!-- endinject -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAzPfoyVbxG2oz378kpMkMszn2XtZn-1SU" charset="utf-8"></script>
+</head>
+<body ng-controller="MainCtrl as main">
+  <header>
+    <nav>
+
+    <div class="menu-collapsed">
+      <div class="bar"></div>
+        <ul>
+          <li class="menu-link">
+            <a ng-click="main.hideMenu()" href="/">HOME</a>
+          </li>
+          <li class="menu-link" ng-show="main.user">
+            <a ng-click="main.hideMenu()" ui-sref="usersShow({ id: main.user._id })">PROFILE</a>
+          </li>
+          <li class="menu-link" ng-hide="main.user">
+            <a ui-sref="register">JOIN THE CAUSE</a>
+          </li>
+          <li class="menu-link" ng-hide="main.user">
+            <a ui-sref="login">SIGN IN</a>
+          </li>
+          <li class="menu-link" ng-show="main.user">
+            <a ui-sref="booksNew">FREE A BOOK</a>
+          </li>
+          <li class="menu-link">
+            <a ui-sref="booksFound">I FOUND A BOOK</a>
+          </li>
+          <li class="menu-link">
+            <a ui-sref="booksIndex">FREED BOOKS</a>
+          </li>
+        </ul>
+    </div>
+    <p><a class="logo" href="/">FREE THE BOOKS</a></p>
+  </nav>
+  </header>
+
+  <main ui-view></main>
+</body>
+</html>
+
+<!-- small change for commit -->

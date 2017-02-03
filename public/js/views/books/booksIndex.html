@@ -1,0 +1,20 @@
+<div class="container index">
+  <h3>Freedom Feed</h3>
+  <div class="book-index">
+    <slick slides-to-show="4" slides-to-scroll="1" init-onload="true"  data="booksIndex.books" class="slider multiple-items" dots="true" arrows="true" rows="3" autoplay="true">
+      <div ng-repeat="book in booksIndex.books | limitTo: -12 | orderBy: '-'" class="feedBox">
+        <img src="images/bookIcon.png" class="bookIcon">
+        <h6>
+          <a ui-sref="usersShow({ id: book.user._id })">{{book.user.username}}</a> freed <a ui-sref="booksShow({ shortId: book.shortId })">{{book.title}}</a>
+          <span ng-if="book.entries[0].location">at {{book.entries[0].location}}</span>
+        </h6>
+      </div>
+    </slick>
+  </div>
+
+
+  <div class="test" ng-repeat="book in booksIndex.books | limitTo: booksIndex.limit">
+    <img src="{{ book.image }}" alt="" class="" ui-sref="booksShow({ shortId: book.shortId })">
+  </div>
+  <h4 ng-if="booksIndex.showButton" class="loader" ng-click="booksIndex.increaseLimit()">Load {{ booksIndex.increment }} more</h4>
+</div>

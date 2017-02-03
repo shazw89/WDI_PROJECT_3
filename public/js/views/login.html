@@ -1,0 +1,21 @@
+<div class="container">
+  <h1>Login</h1>
+  <h4 ng-if="login.message">{{ login.message }}</h4>
+  <form ng-submit="login.login()">
+    <div class="row">
+      <div class="twelve columns">
+        <label for="EmailInput">Your email</label>
+        <input class="u-full-width" id="EmailInput" type="email" name="email" ng-model="login.user.email" placeholder="Email">
+      </div>
+      <div class="row">
+        <div class="twelve columns">
+          <div class="u-full-width">
+            <label for="PasswordInput">Your password</label>
+            <input id="PasswordInput" class="u-full-width" type="password" name="password" ng-model="login.user.password" placeholder="Password">
+          </div>
+        </div>
+      </div>
+    </div>
+    <input type="submit" value="Login">
+  </form>
+</div>
