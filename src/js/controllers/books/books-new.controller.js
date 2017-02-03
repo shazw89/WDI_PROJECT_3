@@ -30,8 +30,7 @@ function BooksNewCtrl(User, CurrentUserService, Book, $state, $http){
         Book
         .save(vm.book).$promise
         .then((response) => {
-          console.log(response.shortId);
-          $state.go('booksShow', { shortId: response.shortId , created: true});
+          $state.go('booksShow', { shortId: response.shortId, created: true });
         });
       });
   }
