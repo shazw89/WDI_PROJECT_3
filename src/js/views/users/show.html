@@ -1,5 +1,11 @@
+
 <div class="container">
+  <li class="button" ng-show="main.user">
+    <a ng-click="main.logout()" id="logout">Logout</a>
+  </li>
+
   <section class="user-details">
+
     <div class="row">
       <div class="twelve columns">
         <img src="{{ usersShow.user.img }}" class="userThumbnail">
@@ -8,9 +14,7 @@
         <p class="userProfileDetails"><strong>Last book dropped: </strong> {{ usersShow.user.books[usersShow.user.books.length-1].title }}</p>
         <p class="userProfileDetails"><strong>About me:</strong> {{ usersShow.user.bio }}</p>
       </div>
-      <li class="menu-link" ng-show="main.user">
-        <a ng-click="main.logout()">Logout (dev)</a>
-      </li>
+
     </div>
   </section>
   <h4>Where are my books now?</h4>
