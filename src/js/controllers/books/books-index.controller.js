@@ -21,11 +21,6 @@ function BooksIndexCtrl(Book, User){
     vm.showButton = vm.limit < vm.books.length;
   };
 
-  User.query().$promise
-    .then(response => {
-      vm.users = response;
-    });
-
   Book.query().$promise
   .then(response => {
     vm.books = sortByKey(response,'index');
