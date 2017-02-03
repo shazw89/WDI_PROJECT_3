@@ -8,6 +8,12 @@ function UsersShowCtrl(User, $stateParams, Book){
   const infoWindows = [];
   vm.markers = [];
 
+  vm.logout = () => {
+    CurrentUserService.removeUser();
+
+
+  };
+
   User
     .get($stateParams).$promise
     .then((response) => {
