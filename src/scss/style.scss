@@ -191,8 +191,7 @@ nav {
   min-height: 75px;
   display: block;
   width: 100vw;
-  // background-color: #CF4646;
-  background-color: #F7F7F7;
+  background-color: #CF4646;
   font-family: 'Anton', sans-serif;
   margin-bottom: 50px;
   text-align: center;
@@ -340,25 +339,8 @@ h1, h2, h3, h4, h5 {
     color: black;
     font-size: 1.2em;
     font-family: 'Anton', sans-serif;
-
   }
 }
-
-
-li.button {
-
-  float: right;
-  background-color: #CF4646;
-  color:white;
-  a#logout{
-    color: black;
-    font-family: 'Anton', sans-serif;
-    font-size: 1.2em;
-
-  }
-}
-
-
 
 .book-thumbnail-new {
   display: block;
@@ -371,5 +353,4 @@ li.button {
   color: white;
   padding: .5em;
   margin-bottom: 1em;
-
 }
