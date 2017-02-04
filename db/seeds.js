@@ -329,7 +329,7 @@ async.waterfall([
       location: 'Aldgate East',
       lat: 51.5152612,
       lng: -0.0722239,
-      date: Date.now()
+      date: Date.now() - 30 * 24 * 60 * 60 * 1000
     },
     {
       name: 'Klaudia',
@@ -337,7 +337,7 @@ async.waterfall([
       location: 'South Kensington',
       lat: 51.4941501,
       lng: -0.1746853,
-      date: Date.now()
+      date: Date.now() - 10 * 24 * 60 * 60 * 1000
     },
     {
       name: 'Sharon',
@@ -345,7 +345,7 @@ async.waterfall([
       location: 'South Kensington',
       lat: 51.51566,
       lng: -0.076211,
-      date: Date.now()
+      date: Date.now() - 5 * 24 * 60 * 60 * 1000
     },
     {
       name: 'Chris',
@@ -369,7 +369,7 @@ async.waterfall([
       location: 'Bethnal Green',
       lat: 51.5269736,
       lng: -0.0667204,
-      date: Date.now()
+      date: Date.now() - 21 * 24 * 60 * 60 * 1000
     },
     {
       name: 'James',
@@ -377,7 +377,7 @@ async.waterfall([
       location: 'Earls Court',
       lat: 51.490331,
       lng: -0.1958417,
-      date: Date.now()
+      date: Date.now() - 18 * 24 * 60 * 60 * 1000
     }]}}}, { upsert: true, new: true }, (err, book) => {
       if (err) return done(err);
       console.log(`${book.entries.length} were saved to ${book.title}`);
@@ -393,7 +393,7 @@ async.waterfall([
       location: 'Hammersmith',
       lat: 51.4911875,
       lng: -0.2237315,
-      date: Date.now()
+      date: Date.now() - 12 * 24 * 60 * 60 * 1000
     },
     {
       name: 'James',
@@ -401,7 +401,7 @@ async.waterfall([
       location: 'Camden',
       lat: 51.55170589999999,
       lng: -0.1588255,
-      date: Date.now()
+      date: Date.now() - 7 * 24 * 60 * 60 * 1000
     },
     {
       name: 'Sharon',
@@ -409,7 +409,7 @@ async.waterfall([
       location: 'Bermondsey',
       lat: 51.49858210000001,
       lng: -0.0691276,
-      date: Date.now()
+      date: Date.now() - 1 * 24 * 60 * 60 * 1000
     }]}}}, { upsert: true, new: true }, (err, book) => {
       if (err) return done(err);
       console.log(`${book.entries.length} were saved to ${book.title}.`);
@@ -544,6 +544,75 @@ async.waterfall([
       location: 'Bethnal Green',
       lat: 51.5269736,
       lng: -0.0667204,
+      date: Date.now()
+    }]}}}, { upsert: true, new: true }, (err, book) => {
+      if (err) return done(err);
+      console.log(`${book.entries.length} were saved to ${book.title}`);
+      return done(null);
+    });
+  },
+  function addEntries8(done) {
+    Book.findOneAndUpdate({
+      title: 'The Bourne Identity'
+    }, { $push: { entries: { $each: [{
+      name: 'Chris',
+      message: 'Jason Bourne reminds me of myself in a lot of ways. I think the world can learn a lot from him (and me). Hence I\'m passing the book on',
+      location: 'Mayfair',
+      lat: 51.5116269,
+      lng: -0.147806,
+      date: Date.now()
+    },
+    {
+      name: 'James',
+      message: 'Chris and Jason are my heros',
+      location: 'Oxford Circus',
+      lat: 51.74858560000001,
+      lng: -1.2419223,
+      date: Date.now()
+    }]}}}, { upsert: true, new: true }, (err, book) => {
+      if (err) return done(err);
+      console.log(`${book.entries.length} were saved to ${book.title}`);
+      return done(null);
+    });
+  }, function addEntries9(done) {
+    Book.findOneAndUpdate({
+      title: 'Fashion Cats'
+    }, { $push: { entries: { $each: [{
+      name: 'Chris',
+      message: 'Did I mention I love cats?',
+      location: 'Park Lane',
+      lat: 51.5132392,
+      lng: -0.1583189,
+      date: Date.now()
+    }]}}}, { upsert: true, new: true }, (err, book) => {
+      if (err) return done(err);
+      console.log(`${book.entries.length} were saved to ${book.title}`);
+      return done(null);
+    });
+  }, function addEntries11(done) {
+    Book.findOneAndUpdate({
+      title: 'Elephant Man'
+    }, { $push: { entries: { $each: [{
+      name: 'Sharon',
+      message: 'I cry every time I read this book.',
+      location: 'Knightsbridge',
+      lat: 51.4991195,
+      lng: -0.1644394,
+      date: Date.now()
+    }]}}}, { upsert: true, new: true }, (err, book) => {
+      if (err) return done(err);
+      console.log(`${book.entries.length} were saved to ${book.title}`);
+      return done(null);
+    });
+  }, function addEntries10(done) {
+    Book.findOneAndUpdate({
+      title: 'To Kill a Mockingbird'
+    }, { $push: { entries: { $each: [{
+      name: 'James',
+      message: 'Can\'t believe the mockingbird dies at the end :(',
+      location: 'Regent\'s Park',
+      lat: 51.532692,
+      lng: -0.141995,
       date: Date.now()
     }]}}}, { upsert: true, new: true }, (err, book) => {
       if (err) return done(err);
